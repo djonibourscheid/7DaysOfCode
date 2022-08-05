@@ -39,4 +39,3 @@ if (numeroDez == stringDez) {
 }
 console.log(`Tipo de numeroDez: ${typeof numeroDez}`);
 console.log(`Tipo de stringDez: ${typeof stringDez}`);
-}
