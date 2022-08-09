@@ -135,14 +135,14 @@
       const h1Element = document.getElementById("results");
 
       const challengeLanguage = document.getElementById("challengeLanguageSpan");
-      const challengeInput = document.getElementById("challengeLanguageInput").value.toLowerCase();
+      const challengeInput = document.getElementById("challengeLanguageInput").value.toLowerCase().trim();
       const challengeDiv = document.querySelector(".challengeExtra");
       const challengeResponse = document.getElementById("challengeResponse")
       // caso tenha algo não preenchido
       if (name === "" || age === "" || language === "") {
         return (
           h1Element.innerText = "Preencha todos os campos para mostrar os resultados completos",
-          h1Element.style.color = "red"
+          h1Element.style.color = "#FF3333"
         );
       }
 
@@ -162,15 +162,15 @@
           break;
         case "nao":
           challengeResponse.innerText = "Ahh que pena... Já tentou aprender outras linguagens?";
-          challengeResponse.style.color = "greenyellow";
+          challengeResponse.style.color = "#ff7f7f";
           break;
         case "não":
           challengeResponse.innerText = "Ahh que pena... Já tentou aprender outras linguagens?";
-          challengeResponse.style.color = "greenyellow";
+          challengeResponse.style.color = "#ff7f7f";
           break;
         default:
           challengeResponse.innerText = "Resposta inválida";
-          challengeResponse.style.color = "#ff7f7f";
+          challengeResponse.style.color = "#FF3333";
       }
 
       /* Poderia fazer um tratamento para transformar o "não" em "nao", mas aí teria que
@@ -183,10 +183,10 @@
           challengeResponse.style.color = "greenyellow";
         } else if (challengeInput === "não" || challengeInput === "nao") {
           challengeResponse.innerText = "Ahh que pena... Já tentou aprender outras linguagens?";
-          challengeResponse.style.color = "greenyellow";
+          challengeResponse.style.color = "#ff7f7f";
         } else {
           challengeResponse.innerText = "Resposta inválida";
-          challengeResponse.style.color = "#ff7f7f";
+          challengeResponse.style.color = "#FF3333";
         }
       */
     }
