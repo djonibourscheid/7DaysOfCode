@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organizador de lista compras</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #4f4f4f;
+      color: white;
+      max-width: 45%;
+      min-width: 17.5rem;
+      margin: 2rem auto;
+    }
+
+    .inputWrapper {
+      display: flex;
+      flex-direction: column;
+      row-gap: .4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    ol {
+      font-weight: bold;
+      margin-top: .5rem;
+    }
+
+    li {
+      font-weight: normal;
+      margin-left: 1.25rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="inputWrapper">
+    <label for="newItem">Adicione um item à sua lista de compras:</label>
+    <input type="text" name="newItem" id="newItem" placeholder="Banana, iogurte...">
+
+    <label for="categories">Selecione qual a categoria deste item:</label>
+    <select name="categories" id="categoriesSelect">
+      <option value="none">Selecione</option>
+      <option value="frutas">Frutas</option>
+      <option value="laticinios">Laticínios</option>
+      <option value="congelados">Congelados</option>
+      <option value="doces">Doces</option>
+    </select>
+
+    <button onclick="addNewItem()">Adicionar item</button>
+    <button onclick="showShoppingList()">Mostrar lista</button>
+  </div>
+
+  <div id="shoppingListResult">
+    <ol>adsdas
+      <li>teste</li>
+    </ol>
+  </div>
+  <script>
+    // Lista pré-definida até eu acabar de vez com o projeto :)
+    let shoppingList = {
+      frutas: ["Banana", "maçã", "abacaxi"],
+      laticinios: ["leite"],
+      congelados: ["Sorvete"],
+      doces: ["chocolate"]
+    }
+
+    function addNewItem() {
+      const item = document.getElementById("newItem").value.trim();
+      const categoryEl = document.getElementById("categoriesSelect");
+      const categoryIndex = categoryEl.selectedIndex;
+      const categoryValue = categoryEl.value;
+
+      // Evitar erros
+      if (item == "") return alert("Preencha o nome do item!");
+
+      // Caso se o usuário adicionar mais options pelo navegador
+      if (categoryIndex >= 1 && categoryIndex <= 4) {
+        // Caso ele altere o value de algum option
+        try {
+          shoppingList[`${categoryValue}`].push(item);
+          return alert("Item adicionado à lista com sucesso!");
+        } catch (error) {
+          return alert("Reinicie a página e não mexa no código da página.");
+        }
+      } else return alert("Selecione uma categoria válida!");
+    }
+
+    function showShoppingList() {
+      const shoppingListResultEl = document.getElementById("shoppingListResult");
+      shoppingListResultEl.innerHTML = "";
+
+      // Para cada categoria
+      for (const key in shoppingList) {
+        // Cria uma lista com o nome da categoria
+        const groupItemsOl = document.createElement("ol");
+        groupItemsOl.innerText = firstLetterUppercase(key);
+
+        // Para cada item dentro da categoria
+        for (const item of shoppingList[key]) {
+          // Cria uma li com o nome do item
+          const liEl = document.createElement("li");
+          liEl.innerText = firstLetterUppercase(item);
+
+          // Adiciona cada um na lista da categoria
+          groupItemsOl.appendChild(liEl);
+        }
+        // Quando acaba os itens, adiona a categoria na tela
+        shoppingListResultEl.appendChild(groupItemsOl);
+      }
+    }
+
+    // Deixar o nome de cada palavra com a Primeira letra Maiúscula
+    function firstLetterUppercase(word) {
+      return word = word[0].toUpperCase() + word.slice(1).toLowerCase();
+    }
+  </script>
+</body>
+
+</html>
