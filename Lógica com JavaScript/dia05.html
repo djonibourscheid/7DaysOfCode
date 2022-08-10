@@ -20,6 +20,7 @@
       max-width: 45%;
       min-width: 17.5rem;
       margin: 2rem auto;
+      font-size: 1.1rem;
     }
 
     .inputWrapper {
@@ -38,6 +39,16 @@
       font-weight: normal;
       margin-left: 1.25rem;
     }
+
+    li button {
+      border-radius: 4px;
+      border: none;
+      margin-left: .5rem;
+      width: 1.15rem;
+      height: 1.15rem;
+      line-height: 1rem;
+      background-color: #ff7f7f
+    }
   </style>
 </head>
 
@@ -55,22 +66,19 @@
       <option value="doces">Doces</option>
     </select>
 
-    <button onclick="addNewItem()">Adicionar item</button>
-    <button onclick="showShoppingList()">Mostrar lista</button>
+    <button onclick="addNewItem()">Adicionar item à lista</button>
   </div>
 
-  <div id="shoppingListResult">
-    <ol>adsdas
-      <li>teste</li>
-    </ol>
-  </div>
+  <div id="shoppingListResult"></div>
+
+
   <script>
     // Lista pré-definida até eu acabar de vez com o projeto :)
     let shoppingList = {
-      frutas: ["Banana", "maçã", "abacaxi"],
-      laticinios: ["leite"],
-      congelados: ["Sorvete"],
-      doces: ["chocolate"]
+      frutas: [],
+      laticinios: [],
+      congelados: [],
+      doces: []
     }
 
     function addNewItem() {
@@ -86,12 +94,21 @@
       if (categoryIndex >= 1 && categoryIndex <= 4) {
         // Caso ele altere o value de algum option
         try {
-          shoppingList[`${categoryValue}`].push(item);
+          shoppingList[`${categoryValue}`].push(firstLetterUppercase(item));
+          showShoppingList();
           return alert("Item adicionado à lista com sucesso!");
         } catch (error) {
           return alert("Reinicie a página e não mexa no código da página.");
         }
       } else return alert("Selecione uma categoria válida!");
+    }
+
+    function removeItem(category, item) {
+      const categorySelected = shoppingList[category]; // frutas
+      const indexItem = categorySelected.indexOf(item); // caso tenha vai dar o index, partindo de 0, senão -1
+      categorySelected.splice(indexItem, 1); // remove apenas o item selecionado
+
+      showShoppingList();
     }
 
     function showShoppingList() {
@@ -110,6 +127,12 @@
           const liEl = document.createElement("li");
           liEl.innerText = firstLetterUppercase(item);
 
+          // Botão para remover
+          const buttonEl = document.createElement("button");
+          buttonEl.setAttribute("onclick", `removeItem('${key}', '${item}')`); // key = category
+          buttonEl.innerText = "x";
+
+          liEl.appendChild(buttonEl);
           // Adiciona cada um na lista da categoria
           groupItemsOl.appendChild(liEl);
         }
