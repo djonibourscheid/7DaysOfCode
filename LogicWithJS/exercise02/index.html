@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dia 02 - Lógica com JavaScript</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <h1 id="results">Olá, preencha as informações para exibir os valores:</h1>
+
+  <div class="inputWrapper">
+    <label for="namePerson">Nome:</label>
+    <input type="text" name="namePerson" id="namePerson">
+
+    <label for="agePerson">Idade:</label>
+    <input type="number" name="agePerson" id="agePerson" min="1" max="120">
+
+    <label for="language">Qual linguagem de programação você está estudando?</label>
+    <input type="text" name="language" id="language">
+
+    <div class="challengeExtra">
+      <label for="challenge">Você gosta de estudar <span id="challengeLanguageSpan">programação</span>?</label>
+      <input type="text" name="challenge" id="challengeLanguageInput" placeholder="Sim ou não">
+      <p id="challengeResponse"></p>
+    </div>
+
+    <button onclick="showResults()">Enviar</button>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
