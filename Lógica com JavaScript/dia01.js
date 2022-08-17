@@ -9,14 +9,18 @@ let stringTrinta = '30'
 let numeroDez = 10
 let stringDez = '10'
 
+
+const result1El = document.querySelector(".result1");
+const result2El = document.querySelector(".result2");
+const result3El = document.querySelector(".result3");
+
 // COMPARAR O numeroUm e a stringUm
 if (numeroUm == stringUm) {
-  console.log('As variáveis numeroUm e stringUm tem o mesmo valor, mas tipos diferentes')
+  result1El.innerText = 'As variáveis numeroUm e stringUm tem o mesmo valor, mas tipos diferentes';
 } else {
-  console.log('As variáveis numeroUm e stringUm não tem o mesmo valor')
+  result1El.innerText = 'As variáveis numeroUm e stringUm não tem o mesmo valor';
 }
-console.log(`Tipo de numeroUm: ${typeof numeroUm}`);
-console.log(`Tipo de stringUm: ${typeof stringUm}`);
+result1El.innerHTML + `Tipo de numeroUm: ${typeof numeroUm} </br> Tipo de stringUm: ${typeof stringUm}`;
 
 console.log("===================");
 
