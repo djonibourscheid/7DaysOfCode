@@ -16,30 +16,24 @@ const result3El = document.querySelector(".result3");
 
 // COMPARAR O numeroUm e a stringUm
 if (numeroUm == stringUm) {
-  result1El.innerText = 'As variáveis numeroUm e stringUm tem o mesmo valor, mas tipos diferentes';
+  result1El.innerHTML = '<p>As variáveis numeroUm e stringUm tem o mesmo valor, mas tipos diferentes</p>';
 } else {
-  result1El.innerText = 'As variáveis numeroUm e stringUm não tem o mesmo valor';
+  result1El.innerHTML = '<p>As variáveis numeroUm e stringUm não tem o mesmo valor</p>';
 }
-result1El.innerHTML + `Tipo de numeroUm: ${typeof numeroUm} </br> Tipo de stringUm: ${typeof stringUm}`;
-
-console.log("===================");
+result1El.innerHTML += `<p>Tipo de numeroUm: ${typeof numeroUm} </br> Tipo de stringUm: ${typeof stringUm}</p>`;
 
 // COMPARAR O numeroTrinta e a stringTrinta
 if (numeroTrinta === stringTrinta) {
-  console.log('As variáveis numeroTrinta e stringTrinta tem o mesmo valor e mesmo tipo')
+  result2El.innerHTML = '<p>As variáveis numeroTrinta e stringTrinta tem o mesmo valor, mas tipos diferentes</p>';
 } else {
-  console.log('As variáveis numeroTrinta e stringTrinta não tem o mesmo tipo')
+  result2El.innerHTML = '<p>As variáveis numeroTrinta e stringTrinta não tem o mesmo valor</p>';
 }
-console.log(`Tipo de numeroTrinta: ${typeof numeroTrinta}`);
-console.log(`Tipo de stringTrinta: ${typeof stringTrinta}`);
-
-console.log("===================");
+result2El.innerHTML += `<p>Tipo de numeroTrinta: ${typeof numeroTrinta} </br> Tipo de stringTrinta: ${typeof stringTrinta}</p>`;
 
 // COMPARAR O numeroDez e a stringDez
 if (numeroDez == stringDez) {
-  console.log('As variáveis numeroDez e stringDez tem o mesmo valor, mas tipos diferentes')
+result3El.innerHTML = '<p>As variáveis numeroDez e stringDez tem o mesmo valor, mas tipos diferentes</p>';
 } else {
-  console.log('As variáveis numeroDez e stringDez não tem o mesmo valor')
+resultEl.innerHTML = '<p>As variáveis numeroDez e stringDez não tem o mesmo valor</p>';
 }
-console.log(`Tipo de numeroDez: ${typeof numeroDez}`);
-console.log(`Tipo de stringDez: ${typeof stringDez}`);
+result3El.innerHTML += `<p>Tipo de numeroDez: ${typeof numeroDez} </br> Tipo de stringDez: ${typeof stringDez}</p>`;
