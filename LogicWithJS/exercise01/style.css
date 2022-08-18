@@ -1,0 +1,58 @@
+.wrapper {
+  max-width: 80%;
+  margin: 5rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.section {
+  background-color: var(--color-gray);
+  border-radius: var(--border-radius-wrappers);
+  width: 60%;
+  padding: 1rem;
+}
+
+.section p:last-child {
+  margin: .5rem 0 0 .5rem;
+}
+
+#expression {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+pre {
+  background-color: #282a36;
+  width: 50%;
+  height: 11.5rem;
+  border-radius: var(--border-radius-normal);
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+}
+
+code {
+  font-size: 1.4rem;
+}
+
+code span.magenta {
+  color: #FF79C6;
+}
+
+code span.purple {
+  color: #BD93F9;
+}
+
+code span.brightYellow {
+  color: #FFFFA5;
+}
+
+code span.brightMagenta {
+  color: #FF92DF;
+}
