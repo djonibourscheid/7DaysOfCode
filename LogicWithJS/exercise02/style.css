@@ -19,7 +19,7 @@ h1 {
 
   padding: 3rem;
   margin-top: 2.5rem;
-  border-radius: .8rem;
+  border-radius: var(--border-radius-wrappers);
 }
 
 .inputWrapper label {
@@ -36,7 +36,7 @@ h1 {
 
 .inputWrapper input {
   border: none;
-  border-radius: .4rem;
+  border-radius: var(--border-radius-normal);
   padding: 0.75rem;
 }
 
@@ -44,7 +44,7 @@ h1 {
   margin: 1rem auto;
   padding: 1rem 2rem;
   border: none;
-  border-radius: .4rem;
+  border-radius: var(--border-radius-normal);
   cursor: pointer;
 }
 
