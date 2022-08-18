@@ -24,16 +24,20 @@ function showResults() {
       challengeResponse.style.display = "none"
     );
   }
-  
+
   const challengeInput = challengeInputEl.value.toLowerCase().trim();
 
-  h1Element.innerText = `Olá ${name}, você tem ${age} anos e está aprendendo ${language}!`
+  // Se age for maior ou igual a 1, ele verifica se age é menor ou igual a 120, se sim ele bota a idade
+  // senão ele bota 120, porque é maior que 120 e este é o máximo.Se age não for maior ou igual a 1,
+  // ele bota 1, porque este é o mínimo
+  h1Element.innerText = `Olá ${name}, você tem ${age >= 1 ? age <= 120 ? age : 120 : 1} anos e está aprendendo ${language}!`
+
   h1Element.style.color = "greenyellow"
   challengeLanguage.innerText = language;
   challengeDiv.style.display = "flex";
 
   if (challengeInput === "") {
-    return;
+    return challengeResponse.innerText = "";
   }
 
   switch (challengeInput) {

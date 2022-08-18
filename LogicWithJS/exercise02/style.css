@@ -1,23 +1,9 @@
-:root {
-  font-size: 62.5%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.6rem;
-  background-color: #4f4f4f;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2.5rem 0;
-  color: #f4f4f4;
 }
 
 h1 {
@@ -27,7 +13,7 @@ h1 {
 }
 
 .inputWrapper {
-  background-color: #6d6d6d;
+  background-color: var(--color-gray);
   display: flex;
   flex-direction: column;
 
@@ -43,7 +29,7 @@ h1 {
 .inputWrapper button,
 .inputWrapper input {
   background-color: #f4f4f4;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
   transition: background-color .3s ease-in-out;
 }
@@ -88,5 +74,5 @@ h1 {
   .inputWrapper {
     max-width: 80%;
     padding: 2rem;
-  } 
+  }
 }
