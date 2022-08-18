@@ -5,9 +5,9 @@
 // Perguntar se o usuário gosta de estudar [linguagem] e dar a resposta
 
 function showResults() {
-  const name = document.getElementById("namePerson").value;
-  const age = document.getElementById("agePerson").value;
-  const language = document.getElementById("language").value;
+  const name = document.getElementById("namePerson").value.trim();
+  const age = document.getElementById("agePerson").value.trim();
+  const language = document.getElementById("language").value.trim();
   const h1Element = document.getElementById("results");
 
   const challengeLanguage = document.getElementById("challengeLanguageSpan");
