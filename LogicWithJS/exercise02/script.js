@@ -21,12 +21,11 @@ function showResults() {
       h1Element.style.color = "#FF3333",
       challengeDiv.style.display = "none",
       challengeInputEl.value = "",
-      challengeResponse.style.display = "none"
+      challengeResponse.innerText = ""
     );
   }
 
   const challengeInput = challengeInputEl.value.toLowerCase().trim();
-
   // Se age for maior ou igual a 1, ele verifica se age é menor ou igual a 120, se sim ele bota a idade
   // senão ele bota 120, porque é maior que 120 e este é o máximo.Se age não for maior ou igual a 1,
   // ele bota 1, porque este é o mínimo
@@ -54,7 +53,6 @@ function showResults() {
       challengeResponse.style.color = "#ff7f7f";
       break;
     default:
-      challengeResponse.style.display = "block";
       challengeResponse.innerText = "Resposta inválida";
       challengeResponse.style.color = "#FF3333";
   }
