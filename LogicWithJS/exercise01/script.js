@@ -20,7 +20,10 @@ if (numeroUm == stringUm) {
 } else {
   result1El.innerHTML = '<p>As variáveis numeroUm e stringUm não tem o mesmo valor:</p>';
 }
-result1El.innerHTML += `<p>Tipo de numeroUm: ${typeof numeroUm}.</br> Tipo de stringUm: ${typeof stringUm}.</p>`;
+result1El.innerHTML += `<div class="codes">
+<pre><code><span class="magenta">Tipo de</span> <span class="purple">numeroUm</span><span class="magenta">:</span> <span class="brightMagenta">${typeof numeroUm}</span></code></pre>
+<pre><code><span class="magenta">Tipo de</span> <span class="purple">stringUm</span><span class="magenta">:</span> <span class="brightMagenta">${typeof stringUm}</span></code></pre>
+</div>`;
 
 // COMPARAR O numeroTrinta e a stringTrinta
 if (numeroTrinta === stringTrinta) {
@@ -28,7 +31,10 @@ if (numeroTrinta === stringTrinta) {
 } else {
   result2El.innerHTML = '<p>As variáveis numeroTrinta e stringTrinta não tem o mesmo valor:</p>';
 }
-result2El.innerHTML += `<p>Tipo de numeroTrinta: ${typeof numeroTrinta}.</br> Tipo de stringTrinta: ${typeof stringTrinta}.</p>`;
+result2El.innerHTML += `<div class="codes">
+<pre><code><span class="magenta">Tipo de</span> <span class="purple">numeroTrinta</span><span class="magenta">:</span> <span class="brightMagenta">${typeof numeroTrinta}</span></code></pre>
+<pre><code><span class="magenta">Tipo de</span> <span class="purple">stringTrinta</span><span class="magenta">:</span> <span class="brightMagenta">${typeof stringTrinta}</span></code></pre>
+</div>`;
 
 // COMPARAR O numeroDez e a stringDez
 if (numeroDez == stringDez) {
@@ -36,4 +42,7 @@ if (numeroDez == stringDez) {
 } else {
   result3El.innerHTML = '<p>As variáveis numeroDez e stringDez não tem o mesmo valor:</p>';
 }
-result3El.innerHTML += `<p>Tipo de numeroDez: ${typeof numeroDez}.</br> Tipo de stringDez: ${typeof stringDez}.</p>`;
+result3El.innerHTML += `<div class="codes">
+<pre><code><span class="magenta">Tipo de</span> <span class="purple">numeroDez</span><span class="magenta">:</span> <span class="brightMagenta">${typeof numeroDez}</span></code></pre>
+<pre><code><span class="magenta">Tipo de</span> <span class="purple">stringDez</span><span class="magenta">:</span> <span class="brightMagenta">${typeof stringDez}</span></code></pre>
+</div>`;

@@ -13,10 +13,21 @@
   border-radius: var(--border-radius-wrappers);
   width: 60%;
   padding: 1rem;
+  text-align: justify;
 }
 
-.section p:last-child {
-  margin: .5rem 0 0 .5rem;
+.section .codes pre {
+  margin-top: .5rem;
+  display: flex;
+}
+
+.section .codes code {
+  background-color: #282a36;
+  border-radius: var(--border-radius-normal);
+  padding: 0.65rem 1.5rem;
+  width: 50%;
+  min-width: 27.5rem;
+  font-size: 1.4rem;
 }
 
 #expression {
@@ -27,17 +38,18 @@
   justify-content: space-between;
 }
 
-pre {
+#expression pre {
   background-color: #282a36;
-  width: 50%;
-  height: 11.5rem;
   border-radius: var(--border-radius-normal);
+  height: 11.5rem;
+  width: 50%;
+  min-width: 27.5rem;
   display: flex;
   align-items: center;
   padding-left: 1.5rem;
 }
 
-code {
+#expression code {
   font-size: 1.4rem;
 }
 
@@ -55,4 +67,48 @@ code span.brightYellow {
 
 code span.brightMagenta {
   color: #FF92DF;
+}
+
+/* RESPONSIVE */
+/* Um pouco antes de quebrar a div que tem a expressão, com fonte 16px ela quebra
+ em 1024px, aqui tá setado para 1050px. Isto funciona para todos os tamanhos de
+ fonte definida pelo navegador
+ */
+
+@media (max-width: 65.625rem) {
+  #expression {
+    justify-content: center;
+  }
+
+  #expression pre,
+  .section .codes code {
+    width: 75%;
+  }
+}
+
+@media (max-width:48rem) {
+  .section {
+    width: 90%;
+  }
+}
+
+@media (max-width:25rem) {
+  .wrapper {
+    max-width: 100%;
+  }
+
+  #expression pre,
+  .section .codes code {
+    width: 100%;
+  }
+}
+
+@media (max-width:20.625rem) {
+  code {
+    font-size: 1.2rem !important;
+  }
+  #expression pre,
+  .section .codes code {
+    min-width: 20.5rem;
+  }
 }
