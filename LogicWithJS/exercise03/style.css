@@ -68,3 +68,32 @@
   word-break: break-word;
   margin: .25rem 0 0 2rem;
 }
+
+/* RESPONSIVE */
+/* 768px */
+@media (max-width:48rem) {
+  .inputWrapper {
+    max-width: 80%;
+  }
+}
+
+/* 424px */
+@media (max-width:26.5rem) {
+  .inputWrapper {
+    max-width: 90%;
+    padding: .75rem;
+  }
+}
+
+/* 320px */
+@media (max-width:20rem) {
+  .options {
+    flex-direction: column;
+    gap: .5rem;
+    text-align: center;
+  }
+
+  .learnTecs input {
+    width: 100%;
+  }
+}
