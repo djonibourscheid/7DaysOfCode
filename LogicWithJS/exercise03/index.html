@@ -8,21 +8,24 @@
   <title>Dia 03 - Fluxo de decisão</title>
 
   <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
   <div class="inputWrapper">
-    <div class="areaSelection">
+    <div class="section areaSelection">
       <label for="area">Você quer seguir para área de Front-End ou de Back-End?</label>
-      <input type="radio" name="area" id="front" value="Front-End">Front-End
-      <input type="radio" name="area" id="back" value="Back-End">Back-End
+      <div class="options">
+        <p><input type="radio" name="area" id="front" value="Front-End">Front-End</p>
+        <p><input type="radio" name="area" id="back" value="Back-End">Back-End</p>
+      </div>
 
       <button onclick="areaValidate()">Enviar</button>
     </div>
 
-    <div class="languageSelection"></div>
-    <div class="specOrFullSelection"></div>
-    <div class="learnTecs"></div>
+    <div class="section hide languageSelection"></div>
+    <div class="section hide specOrFullSelection"></div>
+    <div class="section hide learnTecs"></div>
   </div>
 
 

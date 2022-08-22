@@ -30,28 +30,38 @@ function areaValidate() {
 function frontResult() {
   const wrapper = document.querySelector(".languageSelection");
   const newElement = `<label for="language">Você quer aprender React ou Vue?</label>
-      <input type="radio" name="language" id="react" value="React">React
-      <input type="radio" name="language" id="vue" value="Vue">Vue
-      <button onclick="specOrFullstack()">Enviar</button>
-      `;
+  <div class="options">
+    <p><input type="radio" name="language" id="react" value="React">React</p>
+    <p><input type="radio" name="language" id="vue" value="Vue">Vue</p>
+  </div>
+  <button onclick="specOrFullstack()">Enviar</button>
+  `;
+  wrapper.classList.remove("hide");
   return wrapper.innerHTML = newElement;
 }
 function backResult() {
   const wrapper = document.querySelector(".languageSelection");
   const newElement = `<label for="language">Você quer aprender C# ou Java?</label>
-      <input type="radio" name="language" id="c#" value="C#">C#
-      <input type="radio" name="language" id="java" value="Java">Java
-      <button onclick="specOrFullstack()">Enviar</button>
-      `;
+  <div class="options">
+    <p><input type="radio" name="language" id="c#" value="C#">C#</p>
+    <p><input type="radio" name="language" id="java" value="Java">Java</p>
+  </div>
+  <button onclick="specOrFullstack()">Enviar</button>
+  `;
+  wrapper.classList.remove("hide");
   return wrapper.innerHTML = newElement;
 }
 
 function specOrFullstack() {
   const wrapper = document.querySelector(".specOrFullSelection");
   const newElement = `<label for="specOrFullInput">Você quer se especializar na área ou iniciar uma carreira Fullstack?</label>
-      <input type="radio" name="specOrFullInput" id="spec">Especializar
-      <input type="radio" name="specOrFullInput" id="fullstack">Fullstack
-      <button onclick="specOrFullstackValidate()">Enviar</button>`;
+  <div class="options">
+    <p><input type="radio" name="specOrFullInput" id="spec">Especializar</p>
+    <p><input type="radio" name="specOrFullInput" id="fullstack">Fullstack</p>
+  </div>
+  <button onclick="specOrFullstackValidate()">Enviar</button>
+  `;
+  wrapper.classList.remove("hide");
   return wrapper.innerHTML = newElement;
 }
 
@@ -68,6 +78,7 @@ function specOrFullstackValidate() {
     const mesage = document.createElement("p");
     mesage.innerText = `Continue estudando ainda mais ${languageSelected} para se especializar em ${areaSelected}!`;
     learnTecs.innerHTML = "";
+    learnTecs.classList.remove("hide");
     return learnTecs.appendChild(mesage);
 
   } else if (fullstack.checked) {
@@ -76,6 +87,7 @@ function specOrFullstackValidate() {
       <button onclick="addNewTec()">Adicionar</button>
       <ul></ul>`;
 
+    learnTecs.classList.remove("hide");
     return learnTecs.innerHTML = newElement;
   }
 }
