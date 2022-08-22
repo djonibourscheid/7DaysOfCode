@@ -74,7 +74,7 @@ code span.brightMagenta {
  em 1024px, aqui tá setado para 1050px. Isto funciona para todos os tamanhos de
  fonte definida pelo navegador
  */
-
+/* 1050px */
 @media (max-width: 65.625rem) {
   #expression {
     justify-content: center;
@@ -86,12 +86,14 @@ code span.brightMagenta {
   }
 }
 
+/* 768px */
 @media (max-width:48rem) {
   .section {
     width: 90%;
   }
 }
 
+/* 400px */
 @media (max-width:25rem) {
   .wrapper {
     max-width: 100%;
@@ -103,10 +105,12 @@ code span.brightMagenta {
   }
 }
 
+/* 330px */
 @media (max-width:20.625rem) {
   code {
     font-size: 1.2rem !important;
   }
+
   #expression pre,
   .section .codes code {
     min-width: 20.5rem;

@@ -65,8 +65,8 @@ h1 {
   margin-top: .4rem;
 }
 
-
-@media (max-width: 500px) {
+/* 500px */
+@media (max-width: 31.25rem) {
   h1 {
     max-width: 95%;
   }
