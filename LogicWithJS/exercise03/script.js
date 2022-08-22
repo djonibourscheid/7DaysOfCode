@@ -79,3 +79,24 @@ function specOrFullstackValidate() {
     return learnTecs.innerHTML = newElement;
   }
 }
+
+
+// Desafio extra:
+/* Criar um input para o usuário digitar as linguagens e ferramentas que ainda queira
+aprender para se tornar FullStack e exibir na tela*/
+
+let tecArray = [];
+
+function addNewTec() {
+  const newTecEl = document.getElementById("newTec");
+  const newTec = newTecEl.value.trim();
+
+  newTecEl.value = "";
+  tecArray.push(newTec);
+
+  const ulEl = document.querySelector(".learnTecs ul");
+  const liEl = document.createElement("li");
+  liEl.innerText = newTec;
+
+  return ulEl.appendChild(liEl);
+}
