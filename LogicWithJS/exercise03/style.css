@@ -17,6 +17,7 @@
   margin: 1rem;
   padding: 1rem;
   background-color: #404040;
+  background-color: var(--color-lightgray);
   border-radius: var(--border-radius-normal);
 
   display: flex;
@@ -39,6 +40,8 @@
   background-color: #f4f4f4;
   font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
+  border: none;
+  border-radius: var(--border-radius-normal);
   transition: background-color .3s ease-in-out;
 }
 
@@ -50,14 +53,10 @@
 .inputWrapper button {
   margin: 0 auto;
   padding: 1rem 2rem;
-  border: none;
-  border-radius: var(--border-radius-normal);
   cursor: pointer;
 }
 
 .learnTecs input {
-  border: none;
-  border-radius: var(--border-radius-normal);
   padding: 0.75rem;
   margin: 0 auto;
   width: 65%;
@@ -66,7 +65,15 @@
 .learnTecs li {
   max-width: 100%;
   word-break: break-word;
-  margin: .25rem 0 0 2rem;
+  margin: .5rem 0 0 2rem;
+}
+
+.learnTecs li button {
+  margin-left: .5rem;
+  padding: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: #F47A7A;
 }
 
 /* RESPONSIVE */

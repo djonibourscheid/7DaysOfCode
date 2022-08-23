@@ -104,21 +104,41 @@ let tecsStorage = JSON.parse(localStorage.getItem("learnLanguages")) || []
 function addNewTec() {
   const newTecEl = document.getElementById("newTec"); // input
   const newTec = newTecEl.value.trim(); // valor do input
-  
+
   // não adicionar input vazio no LS e na lista
-  if (newTec === "") return;
+  if (newTec === "") return alert("Preencha o nome da tecnologia!");
 
   newTecEl.value = ""; // limpando o valor elemento do input
   tecsStorage.push(newTec); // add valor do input no localstorage
 
+  // salvando no LS
   localStorage.setItem("learnLanguages", JSON.stringify(tecsStorage));
 
   showTecs(newTec);
+}
+
+function removeTec(item) {
+  const indexItem = tecsStorage.indexOf(item); // caso tenha vai dar o index, partindo de 0, senão -1
+  tecsStorage.splice(indexItem, 1); // remove apenas o item selecionado
+  localStorage.setItem("learnLanguages", JSON.stringify(tecsStorage)); // Salvando alterações no LS
+
+  // limpando a ul de linguagens
+  const ulEl = document.querySelector(".learnTecs ul");
+  ulEl.innerHTML = "";
+
+  tecsStorage.forEach(element => showTecs(element)); // mostra todas as linguagens que sobraram
 }
 
 function showTecs(element) {
   const ulEl = document.querySelector(".learnTecs ul");
   const liEl = document.createElement("li");
   liEl.innerText = element;
+
+  // Botão para remover
+  const buttonEl = document.createElement("button");
+  buttonEl.setAttribute("onclick", `removeTec('${element}')`);
+  buttonEl.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+
+  liEl.appendChild(buttonEl);
   ulEl.appendChild(liEl);
 }
