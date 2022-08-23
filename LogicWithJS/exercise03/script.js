@@ -87,28 +87,38 @@ function specOrFullstackValidate() {
       <button onclick="addNewTec()">Adicionar</button>
       <ul></ul>`;
 
+    learnTecs.innerHTML = newElement;
+    // Mostra todas as linguagens do storage
+    tecsStorage.forEach(element => showTecs(element));
     learnTecs.classList.remove("hide");
-    return learnTecs.innerHTML = newElement;
   }
 }
 
 
-// Desafio extra:
-/* Criar um input para o usuário digitar as linguagens e ferramentas que ainda queira
-aprender para se tornar FullStack e exibir na tela*/
-
-let tecArray = [];
+/* Desafio extra:
+  - Criar um input para o usuário digitar as linguagens e ferramentas que ainda queira
+  aprender para se tornar FullStack e exibir na tela
+  - Salvar os dados no localStorage */
+let tecsStorage = JSON.parse(localStorage.getItem("learnLanguages")) || []
 
 function addNewTec() {
-  const newTecEl = document.getElementById("newTec");
-  const newTec = newTecEl.value.trim();
+  const newTecEl = document.getElementById("newTec"); // input
+  const newTec = newTecEl.value.trim(); // valor do input
+  
+  // não adicionar input vazio no LS e na lista
+  if (newTec === "") return;
 
-  newTecEl.value = "";
-  tecArray.push(newTec);
+  newTecEl.value = ""; // limpando o valor elemento do input
+  tecsStorage.push(newTec); // add valor do input no localstorage
 
+  localStorage.setItem("learnLanguages", JSON.stringify(tecsStorage));
+
+  showTecs(newTec);
+}
+
+function showTecs(element) {
   const ulEl = document.querySelector(".learnTecs ul");
   const liEl = document.createElement("li");
-  liEl.innerText = newTec;
-
-  return ulEl.appendChild(liEl);
+  liEl.innerText = element;
+  ulEl.appendChild(liEl);
 }
