@@ -34,6 +34,7 @@ function setupGame() {
 
     // Limpa a área de respostas
     const spokenNumbersEl = document.querySelector(".numbers");
+    spokenNumbersEl.classList.remove("beforeStart");
     spokenNumbersEl.innerHTML = "";
 
     // Gera o número que o usuário deverá acertar
