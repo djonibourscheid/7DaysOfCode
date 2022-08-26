@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dia 05 e 06 - Array e coleções</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="inputWrapper">
+    <label for="newItem">Adicione um item à sua lista de compras:</label>
+    <input type="text" name="newItem" id="newItem" placeholder="Banana, iogurte...">
+
+    <label for="categories">Selecione qual a categoria deste item:</label>
+    <select name="categories" id="categoriesSelect">
+      <option value="none">Selecione</option>
+      <option value="frutas">Frutas</option>
+      <option value="laticinios">Laticínios</option>
+      <option value="congelados">Congelados</option>
+      <option value="doces">Doces</option>
+    </select>
+
+    <button onclick="addNewItem()">Adicionar item à lista</button>
+  </div>
+
+  <div id="shoppingListResult"></div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
