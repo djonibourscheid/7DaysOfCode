@@ -9,6 +9,11 @@
 
   --border-radius-wrappers: 0.8rem;
   --border-radius-normal: 0.4rem;
+
+  --padding-wrapper: 4rem;
+  --padding-wrapper-responsive: 1.75rem;
+
+  --wrapper-max-width: 60%;
 }
 
 * {

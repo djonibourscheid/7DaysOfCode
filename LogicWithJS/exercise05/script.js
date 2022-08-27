@@ -39,6 +39,7 @@ function removeItem(category, item) {
 function showShoppingList() {
   const shoppingListResultEl = document.getElementById("shoppingListResult");
   shoppingListResultEl.innerHTML = "";
+  shoppingListResultEl.classList.remove("hide");
 
   // Para cada categoria
   for (const category in shoppingList) {
@@ -55,7 +56,7 @@ function showShoppingList() {
       // Botão para remover
       const buttonEl = document.createElement("button");
       buttonEl.setAttribute("onclick", `removeItem('${category}', '${item}')`);
-      buttonEl.innerText = "x";
+      buttonEl.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
 
       liEl.appendChild(buttonEl);
       // Adiciona cada um na lista da categoria

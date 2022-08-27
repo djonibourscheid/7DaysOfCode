@@ -11,12 +11,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
+  <script src="https://kit.fontawesome.com/9946acec49.js" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="../../global.css">
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <div class="inputWrapper">
+  <div class="section inputWrapper">
     <label for="newItem">Adicione um item à sua lista de compras:</label>
     <input type="text" name="newItem" id="newItem" placeholder="Banana, iogurte...">
 
@@ -32,7 +34,7 @@
     <button onclick="addNewItem()">Adicionar item à lista</button>
   </div>
 
-  <div id="shoppingListResult"></div>
+  <div class="section hide" id="shoppingListResult"></div>
 
   <script src="./script.js"></script>
 </body>
