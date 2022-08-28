@@ -86,3 +86,13 @@ li button {
   background-color: var(--color-lightred);
   cursor: pointer;
 }
+
+
+/* RESPONSIVE */
+/* 544px */
+@media (max-width: 34rem) {
+  .section {
+    max-width: 80%;
+    padding: var(--padding-wrapper-responsive);
+  }
+}
