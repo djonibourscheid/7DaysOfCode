@@ -13,7 +13,7 @@ function addNewItem() {
   const categoryValue = categoryEl.value;
 
   // Evitar erros
-  if (item == "") return alert("Preencha o nome do item!");
+  if (item == "") return messageAlert("Preencha o nome do item!");
 
   // Caso se o usuário adicionar mais options pelo navegador
   if (categoryIndex >= 1 && categoryIndex <= 4) {
@@ -21,11 +21,11 @@ function addNewItem() {
     try {
       shoppingList[`${categoryValue}`].push(firstLetterUppercase(item));
       showShoppingList();
-      return alert("Item adicionado à lista com sucesso!");
+      return messageAlert("Item adicionado à lista com sucesso!");
     } catch (error) {
-      return alert("Reinicie a página e não mexa no código da página.");
+      return messageAlert("Reinicie a página e não mexa no código da página.");
     }
-  } else return alert("Selecione uma categoria válida!");
+  } else return messageAlert("Selecione uma categoria válida!");
 }
 
 function removeItem(category, item) {
@@ -37,7 +37,7 @@ function removeItem(category, item) {
 }
 
 function showShoppingList() {
-  const shoppingListResultEl = document.getElementById("shoppingListResult");
+  const shoppingListResultEl = document.querySelector(".shoppingListResult");
   shoppingListResultEl.innerHTML = "";
   shoppingListResultEl.classList.remove("hide");
 
@@ -70,4 +70,11 @@ function showShoppingList() {
 // Deixar o nome de cada palavra com a Primeira letra Maiúscula
 function firstLetterUppercase(word) {
   return word = word[0].toUpperCase() + word.slice(1).toLowerCase();
+}
+
+function messageAlert(message) {
+  const messageAlertEl = document.querySelector(".messageAlert");
+  const messageAlert = document.querySelector(".messageAlert p");
+  messageAlertEl.classList.remove("hide");
+  messageAlert.innerText = message;
 }

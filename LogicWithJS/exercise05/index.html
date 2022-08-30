@@ -18,23 +18,29 @@
 </head>
 
 <body>
-  <div class="section inputWrapper">
-    <label for="newItem">Adicione um item à sua lista de compras:</label>
-    <input type="text" name="newItem" id="newItem" placeholder="Banana, iogurte...">
-
-    <label for="categories">Selecione qual a categoria deste item:</label>
-    <select name="categories" id="categoriesSelect">
-      <option value="none">Selecione</option>
-      <option value="frutas">Frutas</option>
-      <option value="laticinios">Laticínios</option>
-      <option value="congelados">Congelados</option>
-      <option value="doces">Doces</option>
-    </select>
-
-    <button onclick="addNewItem()">Adicionar item à lista</button>
+  <div class="wrapper">
+    <div class="section inputWrapper">
+      <label for="newItem">Adicione um item à sua lista de compras:</label>
+      <input type="text" name="newItem" id="newItem" placeholder="Banana, iogurte...">
+  
+      <label for="categories">Selecione qual a categoria deste item:</label>
+      <select name="categories" id="categoriesSelect">
+        <option value="none">Selecione</option>
+        <option value="frutas">Frutas</option>
+        <option value="laticinios">Laticínios</option>
+        <option value="congelados">Congelados</option>
+        <option value="doces">Doces</option>
+      </select>
+  
+      <button onclick="addNewItem()">Adicionar item à lista</button>
+    </div>
+  
+    <div class="section hide messageAlert">
+      <p>Adicione itens à sua lista de compras para exibir a lista de compras.</p>
+    </div>
+  
+    <div class="section hide shoppingListResult"></div>
   </div>
-
-  <div class="section hide" id="shoppingListResult"></div>
 
   <script src="./script.js"></script>
 </body>
