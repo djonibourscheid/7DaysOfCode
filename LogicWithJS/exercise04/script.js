@@ -5,13 +5,13 @@ function setupGame() {
   spokenNumbers = [];
 
   // Valores mínimo e máximo
-  let numberMin = document.getElementById("minNum").value;
-  let numberMax = document.getElementById("maxNum").value;
+  let numberMin = Number(document.getElementById("minNum").value);
+  let numberMax = Number(document.getElementById("maxNum").value);
 
   if (numberMin === "" || numberMin <= 0) { numberMin = 1; }
-  if (numberMax === "") { numberMax = 10; }
+  if (numberMax === "" || numberMax <= 0) { numberMax = 10; }
 
-  const verification = verificationMinSmallMax(numberMin, numberMax);
+  const verification = verificationMinBigMax(numberMin, numberMax);
   // Se passar na verificação retorna true
   if (verification) {
     // Mostrando o lugar onde o usuário irá inserir os números
@@ -29,8 +29,9 @@ function setupGame() {
 
     // Escondendo a área de mensagens
     const messageAlertEl = document.querySelector(".messageAlert");
+    const messageAlert = document.querySelector(".messageAlert p");
     messageAlertEl.classList.add("hide");
-    messageAlertEl.innerText = "";
+    messageAlert.innerText = "";
 
     // Limpa a área de respostas
     const spokenNumbersEl = document.querySelector(".numbers");
@@ -39,12 +40,14 @@ function setupGame() {
 
     // Gera o número que o usuário deverá acertar
     numberSelected = Math.floor(Math.random() * (numberMax - numberMin + 1) + numberMin);
+    // Se o número selecionado for menor ou igual a 0 ele coloca 1
+    numberSelected <= 0 ? numberSelected = 1 : numberSelected;
   }
 }
 
-function verificationMinSmallMax(numberMin, numberMax) {
-  if (numberMin > numberMax) {
-    alert("Número mínimo é maior ou igual ao número máximo!");
+function verificationMinBigMax(numberMin, numberMax) {
+  if (numberMin >= numberMax) {
+    messageAlert("Número mínimo é maior ou igual ao número máximo!");
     return false;
   } else return true;
 }
@@ -99,8 +102,9 @@ function game(numberMin, numberMax) {
 
 function messageAlert(message) {
   const messageAlertEl = document.querySelector(".messageAlert");
+  const messageAlert = document.querySelector(".messageAlert p");
   messageAlertEl.classList.remove("hide");
-  messageAlertEl.innerText = message;
+  messageAlert.innerText = message;
 }
 
 function addSpokenNumbersScreen(numberInput, hitNumber) {
