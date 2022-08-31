@@ -30,7 +30,7 @@
 
 .inputNumbers input,
 .operationsButtons button {
-  background-color: #f4f4f4;
+  background-color: var(--color-white);
   font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
   border: none;
@@ -46,7 +46,7 @@
 
 .inputNumbers input:hover,
 .operationsButtons button:hover {
-  background-color: #e4e4e4;
+  background-color: var(--color-button-input-hover);
 }
 
 .operationsButtons button {

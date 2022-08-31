@@ -36,7 +36,7 @@
 
 .inputWrapper button,
 .learnTecs input {
-  background-color: #f4f4f4;
+  background-color: var(--color-white);
   font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
   border: none;
@@ -46,7 +46,7 @@
 
 .inputWrapper button:hover,
 .learnTecs input:hover {
-  background-color: #e4e4e4;
+  background-color: var(--color-button-input-hover);
 }
 
 .inputWrapper button {

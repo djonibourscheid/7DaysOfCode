@@ -34,7 +34,7 @@
 }
 
 .inputWrapper input {
-  background-color: #f4f4f4;
+  background-color: var(--color-white);
 }
 
 .inputWrapper select {
@@ -61,7 +61,7 @@
 .inputWrapper input:hover,
 .inputWrapper select:hover,
 .section button:hover {
-  background-color: #e4e4e4;
+  background-color: var(--color-button-input-hover);
 }
 
 

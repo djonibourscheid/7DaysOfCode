@@ -31,7 +31,7 @@ h1 {
 
 .section button,
 .section input {
-  background-color: #f4f4f4;
+  background-color: var(--color-white);
   font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
   border: none;
@@ -41,7 +41,7 @@ h1 {
 
 .section button:hover,
 .section input:hover {
-  background-color: #e4e4e4;
+  background-color: var(--color-button-input-hover);
 }
 
 .section button {
