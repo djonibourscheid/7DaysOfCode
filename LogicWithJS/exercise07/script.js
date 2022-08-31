@@ -1,66 +1,75 @@
-let operacao, valor1, valor2;
+function start(operation) {
+  let value1 = Number(document.getElementById("firstNumber").value);
+  let value2 = Number(document.getElementById("secondNumber").value);
 
-function adicao(valor1, valor2) {
-  const resultado = Number(valor1) + Number(valor2);
+  if (value1 === "") { value1 = 0; }
+  if (value2 === "") { value2 = 0; }
 
-  validar(resultado)
-}
-function subtracao(valor1, valor2) {
-  const resultado = Number(valor1) - Number(valor2);
-
-  validar(resultado)
-}
-function multiplicacao(valor1, valor2) {
-  const resultado = Number(valor1) * Number(valor2);
-
-  validar(resultado)
-}
-function divisao(valor1, valor2) {
-  const resultado = Number(valor1) / Number(valor2);
-
-  validar(resultado)
-}
-
-function validar(resultado) {
-  if (isNaN(resultado)) {
-    return alert("Valores inválidos");
-  } else {
-    return alert(`O resultado é ${resultado}`);
-  }
-}
-
-do {
-  let continuar = true;
-  operacao = prompt("Qual operação você deseja realizar? 'Adicão' 'Subtração' 'multiplicação' ou 'divisão'").toLowerCase().trim();
-  console.log(operacao);
-  if (operacao === "adição" || operacao === "subtração" || operacao === "multiplicação" || operacao === "divisão") {
-    valor1 = Number(prompt("Qual primeiro valor?").trim());
-    valor2 = Number(prompt("Qual segundo valor?").trim());
-  }
-
-  switch (operacao) {
-    case 'adição':
-      adicao(valor1, valor2);
+  switch (operation) {
+    case 1:
+      additionFunction(value1, value2);
       break;
-    case 'subtração':
-      subtracao(valor1, valor2);
+
+    case 2:
+      subtractionFunction(value1, value2);
       break;
-    case 'multiplicação':
-      multiplicacao(valor1, valor2);
+
+    case 3:
+      multiplicationFunction(value1, value2);
       break;
-    case 'divisão':
-      divisao(valor1, valor2);
+
+    case 4:
+      divisionFunction(value1, value2);
       break;
-    case 'sair':
-      alert("Volte sempre!");
-      continuar = false;
-      break;
+
     default:
-      if (operacao != null) {
-        alert("Operação inválida.")
-      } else {
-        continuar = false;
-      };
+      return messageResult("Reinicie a página e não mexa no código!");
       break;
   }
-} while (continuar);
+}
+
+function additionFunction(value1, value2) {
+  const account = value1 + value2;
+  const result = parseFloat(account.toFixed(2));
+
+  validate("Adição", value1, value2, result);
+}
+function subtractionFunction(value1, value2) {
+  const account = value1 - value2;
+  const result = parseFloat(account.toFixed(2));
+
+  validate("Subtração", value1, value2, result);
+}
+function multiplicationFunction(value1, value2) {
+  const account = value1 * value2;
+  const result = parseFloat(account.toFixed(2));
+
+  validate("Multiplicação", value1, value2, result);
+}
+function divisionFunction(value1, value2) {
+  let account = value1 / value2;
+
+  if (isNaN(account)) { account = 0; }
+  if (account === Infinity) { account = 0; }
+
+  const result = parseFloat(account.toFixed(2));
+
+  validate("Divisão", value1, value2, result);
+}
+
+function validate(operation, value1, value2, result) {
+  if (isNaN(result)) {
+    messageResult("Valores inválidos");
+  } else {
+    const message = `O resultado da operação de <span>${operation}</span> de
+    <span>${value1}</span> e <span>${value2}</span> é <span>${result}</span>`;
+    messageResult(message);
+  }
+}
+
+function messageResult(message) {
+  const messageResultEl = document.querySelector(".result");
+  const messageEl = document.querySelector(".result p");
+  messageResultEl.classList.remove("hide");
+  messageEl.innerHTML = message;
+}

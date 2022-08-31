@@ -9,6 +9,29 @@
 </head>
 
 <body>
+  <div class="wrapper">
+    <h1>Calculadora Básica</h1>
+    <div class="section inputNumbers">
+      <label for="firstNumber">Primeiro número:</label>
+      <input type="number" name="firstNumber" id="firstNumber" placeholder="Insira um número">
+      <label for="secondNumber">Segundo número:</label>
+      <input type="number" name="secondNumber" id="secondNumber" placeholder="Insira um número">
+    </div>
+
+    <div class="section operations">
+      <div class="operationsButtons">
+        <button onclick="start(1)" class="addition">Adição</button>
+        <button onclick="start(2)" class="subtraction">Subtração</button>
+        <button onclick="start(3)" class="multiplication">Multiplicação</button>
+        <button onclick="start(4)" class="division">Divisão</button>
+      </div>
+    </div>
+
+    <div class="section hide result">
+      <p>Preencha para aparecer o resultado.</p>
+    </div>
+  </div>
+
   <script src="./script.js"></script>
 </body>
 
