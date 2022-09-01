@@ -1,15 +1,16 @@
 let chances, spokenNumbers, numberSelected;
 
 function setupGame() {
-  chances = 3;
   spokenNumbers = [];
 
-  // Valores mínimo e máximo
+  // Valores mínimo, máximo e chances
   let numberMin = Number(document.getElementById("minNum").value);
   let numberMax = Number(document.getElementById("maxNum").value);
+  chances = Number(document.getElementById("chances").value);
 
   if (numberMin === "" || numberMin <= 0) { numberMin = 1; }
   if (numberMax === "" || numberMax <= 0) { numberMax = 10; }
+  if (chances === "" || chances <= 0) { chances = 3; }
 
   const verification = verificationMinBigMax(numberMin, numberMax);
   // Se passar na verificação retorna true
@@ -18,9 +19,10 @@ function setupGame() {
     const inputNumberSection = document.querySelector(".section.inputNumber");
     inputNumberSection.classList.remove("hide");
 
-    // Botando o placeholder no input do número mínimo máximo
+    // Botando o placeholder no input do número mínimo máximo e limpando valor do input de números palpitados
     const inputNumberEl = document.getElementById("inputNumberEl");
     inputNumberEl.placeholder = `${numberMin} a ${numberMax}`;
+    inputNumberEl.value = "";
 
     // Configurando o botão de enviar o número do jogador com o numero min e max
     const buttonInputNumber = document.getElementById("buttonInputNumber");
