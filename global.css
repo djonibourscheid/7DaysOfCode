@@ -30,3 +30,18 @@ body {
   background-color: var(--color-black);
   color: var(--color-white);
 }
+
+#backToMenu {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  z-index: 10;
+  color: var(--color-white);
+  font-size: 3rem;
+
+  transition: color .3s ease-in-out;
+}
+
+#backToMenu:hover {
+  color: var(--color-button-input-hover);
+}
