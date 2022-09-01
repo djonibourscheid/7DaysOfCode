@@ -45,3 +45,27 @@ body {
 #backToMenu:hover {
   color: var(--color-button-input-hover);
 }
+
+/* Firefox */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-lightgray) transparent;
+}
+
+/* Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  margin-right: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-lightgray);
+  border-radius: 3px;
+  cursor: move;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border: none;
+}
