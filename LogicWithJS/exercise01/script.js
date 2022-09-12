@@ -14,6 +14,7 @@ const result1El = document.querySelector("#result1");
 const result2El = document.querySelector("#result2");
 const result3El = document.querySelector("#result3");
 
+
 // COMPARAR O numeroUm e a stringUm
 if (numeroUm == stringUm) {
   result1El.innerHTML = '<p>As variáveis numeroUm e stringUm tem o mesmo valor, mas tipos diferentes:</p>';
@@ -25,6 +26,7 @@ result1El.innerHTML += `<div class="codes">
 <pre><code><span class="magenta">Tipo de</span> <span class="purple">stringUm</span><span class="magenta">:</span> <span class="brightMagenta">${typeof stringUm}</span></code></pre>
 </div>`;
 
+
 // COMPARAR O numeroTrinta e a stringTrinta
 if (numeroTrinta === stringTrinta) {
   result2El.innerHTML = '<p>As variáveis numeroTrinta e stringTrinta tem o mesmo valor, mas tipos diferentes:</p>';
@@ -32,9 +34,10 @@ if (numeroTrinta === stringTrinta) {
   result2El.innerHTML = '<p>As variáveis numeroTrinta e stringTrinta não tem o mesmo valor:</p>';
 }
 result2El.innerHTML += `<div class="codes">
-<pre><code><span class="magenta">Tipo de</span> <span class="purple">numeroTrinta</span><span class="magenta">:</span> <span class="brightMagenta">${typeof numeroTrinta}</span></code></pre>
-<pre><code><span class="magenta">Tipo de</span> <span class="purple">stringTrinta</span><span class="magenta">:</span> <span class="brightMagenta">${typeof stringTrinta}</span></code></pre>
+<pre><code><span class="magenta">Valor de</span> <span class="purple">numeroTrinta</span><span class="magenta">:</span> <span class="brightMagenta">${typeof numeroTrinta}</span></code></pre>
+<pre><code><span class="magenta">Valor de</span> <span class="purple">stringTrinta</span><span class="magenta">:</span> <span class="brightMagenta">${typeof stringTrinta}</span></code></pre>
 </div>`;
+
 
 // COMPARAR O numeroDez e a stringDez
 if (numeroDez == stringDez) {
