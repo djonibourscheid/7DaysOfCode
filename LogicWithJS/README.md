@@ -19,7 +19,39 @@
 
 
 ## ✨ Projetos
-- Projeto 1: Operações Booleanas
+<!-- Projeto 1 -->
+<details>
+  <summary>Projeto 1: Operações Booleanas</summary>
+
+  Dado as seguintes variáveis:
+  <pre lang="javascript">
+const numeroUm = 1
+const stringUm = '1'
+const numeroTrinta = 30
+const stringTrinta = '30'
+const numeroDez = 10
+const stringDez = '10'
+</pre>
+
+  Compare cada <i>numero</i> com sua devida <i>string</i> e retorne :
+  <ul>
+    <li>if (<i>numero</i> {== ou ===} <i>string</i>):
+      <ul>
+        <li>As variáveis <i>numero</i> e <i>string</i> tem o mesmo valor, mas tipos diferentes</li>
+        <li>As variáveis <i>numero</i> e <i>string</i> tem o mesmo valor e mesmo tipo</li>
+      </ul>
+    </li>
+    <li>else:
+      <ul>
+        <li>As variáveis <i>numero</i> e <i>string</i> não tem o mesmo valor</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4><a href="https://djonibourscheid.github.io/7DaysOfCode/LogicWithJS/exercise01/"><b>🥇 Resultado 🥇</b></a></h4>
+  <hr></hr>
+</details>
+
 - Projeto 2: Variáveis
 - Projeto 3: Fluxo de decisão
 - Projeto 4: Loops e randomização
