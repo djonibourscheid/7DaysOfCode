@@ -5,6 +5,7 @@
   --gray-500: #667085;
   --gray-900: #101828;
   --color-red: #8E2424;
+  --color-red-smooth: #8e242440;
   --color-white: #FFFFFF;
 }
 
@@ -37,6 +38,10 @@ a {
   box-shadow: 0 0.1rem 0.2rem rgba(16, 24, 40, 0.05);
 }
 
+.register-button:hover {
+  filter: opacity(0.85);
+}
+
 
 /* HEADER */
 .header__wrapper {
@@ -57,7 +62,23 @@ a {
   align-items: center;
 }
 
+.header__links a,
+.button-link {
+  transition: 0.25s ease;
+}
+
+.header__links a:hover {
+  color: var(--gray-900);
+  text-decoration: underline;
+  text-shadow: 0 0 5px var(--color-red-smooth);
+}
+
 .login-buttons {
   display: flex;
   gap: 1.2rem;
+}
+
+.login-buttons .button-link:first-child:hover {
+  color: var(--gray-900);
+  background-color: #f0f0f0;
 }
