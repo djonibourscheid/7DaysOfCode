@@ -28,6 +28,7 @@ main {
   height: 100%;
   border-radius: var(--border-radius-wrappers);
   padding: 2rem 3rem;
+  text-align: center;
 }
 
 .project.coming {
@@ -51,8 +52,6 @@ main {
   content: "";
   width: 100%;
   height: .15rem;
-  background-color: #f7df1e;
-  box-shadow: 0 0px 0.75rem 0.05rem #f7df1e;
   border-radius: 1rem;
   position: absolute;
   bottom: -0.2rem;
@@ -70,15 +69,51 @@ main {
   text-decoration: underline;
 }
 
-.project li a {
+.project li a,
+.one-link a {
   color: var(--color-white);
   text-decoration: none;
   transition: text-shadow 0.2s ease-in-out;
 }
 
 .project li a:hover,
+.one-link a:hover,
 .social:hover {
   text-shadow: 0 0 .5rem #bbb;
+}
+
+/* Cards with a link and svg arrow */
+.one-link a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.one-link a span {
+  text-decoration: underline;
+}
+
+/* Logic with JS */
+#LogicWithJS {
+  text-align: start;
+}
+
+/* Span colors */
+.js-span::after {
+  background-color: hsl(52, 93%, 54%);
+  box-shadow: 0 0px 0.75rem 0.05rem hsl(52, 93%, 54%);
+}
+
+.html-span::after {
+  background-color: hsl(13, 93%, 54%);
+  box-shadow: 0 0px 0.75rem 0.05rem hsl(13, 93%, 54%);
+}
+
+.css-span::after {
+  background-color: hsl(260, 93%, 54%);
+  box-shadow: 0 0px 0.75rem 0.05rem hsl(260, 93%, 54%);
 }
 
 
@@ -103,6 +138,7 @@ footer .wrapper {
   margin: 0 auto;
 }
 
+.one-link i,
 footer h3,
 .social i {
   font-size: 2rem;
