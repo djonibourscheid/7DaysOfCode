@@ -42,15 +42,14 @@ a {
   filter: opacity(0.85);
 }
 
-.header__wrapper,
-.about__wrapper {
+.container {
   width: 100%;
   max-width: 128rem;
 }
 
 
 /* HEADER */
-.header__wrapper {
+.header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -88,24 +87,23 @@ a {
 
 
 /* ABOUT US */
-.about__wrapper {
+.about__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2.4rem;
 
   text-align: center;
-  padding: 9.6rem 0;
-  margin: 0 auto;
+  margin: 9.6rem auto;
 }
 
-.about__wrapper .overtitle {
+.about__container .overtitle {
   font-weight: 600;
   line-height: 2.4rem;
   color: var(--color-red);
 }
 
-.about__wrapper .title {
+.about__container .title {
   font-weight: 600;
   font-size: 4.8rem;
   line-height: 6rem;
@@ -113,10 +111,45 @@ a {
   color: var(--gray-900);
 }
 
-.about__wrapper p {
+.about__container p {
   max-width: 79rem;
   margin-top: 1.2rem;
 
   font-size: 2rem;
   line-height: 3rem;
+}
+
+
+/* METRICS */
+.metrics__container {
+  padding: 0 3.2rem;
+  margin: 0 auto 9.6rem;
+
+  display: flex;
+  gap: 3.2rem;
+}
+
+.metric {
+  max-width: 28rem;
+}
+
+.metric span {
+  font-weight: 600;
+  font-size: 6rem;
+  line-height: 7.2rem;
+  letter-spacing: -0.02em;
+  color: var(--color-red);
+}
+
+.metric h3 {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  color: var(--gray-900);
+  margin: 1.2rem 0 0.8rem;
+}
+
+.metric p {
+  line-height: 2.4rem;
+  color: var(--gray-500);
 }
