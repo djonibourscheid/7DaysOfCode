@@ -20,14 +20,16 @@
 
 
 ## ✨ Projeto
-<a align="center" href="http://https://djonibourscheid.github.io/7DaysOfCode/#LandingPage">
-  <img src="./.github/project.gif" alt="Gif apresentação do projeto">
-
-  <p>
+<p align="center">
+  <a href="http://https://djonibourscheid.github.io/7DaysOfCode/#LandingPage">
+    <img alt="Gif apresentação do projeto" src="./.github/project.gif">
+  </a>
+</p>
+<p align="center">
+  <a href="http://https://djonibourscheid.github.io/7DaysOfCode/#LandingPage">
     <img alt="Acessar o projeto pelo github pages" src="https://img.shields.io/badge/Acessar%20Projeto%20-Github%20Pages-%2304D361">
-  </p>
-</a>
-
+  </a>
+</p>
 
 ## 🎨 Layout
 O layout da aplicação está disponível no Figma:
