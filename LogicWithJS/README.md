@@ -21,7 +21,7 @@
 ## ✨ Projetos
 <!-- Projeto 1 -->
 <details>
-  <summary>Projeto 1: Operações Booleanas</summary>
+  <summary><b>Projeto 1: Operações Booleanas</b></summary>
 
   Dado as seguintes variáveis:
   <pre lang="javascript">
@@ -48,11 +48,45 @@ const stringDez = '10'
     </li>
   </ul>
 
-  <h4><a href="https://djonibourscheid.github.io/7DaysOfCode/LogicWithJS/exercise01/"><b>🥇 Resultado 🥇</b></a></h4>
+  <h4>
+    <a href="https://djonibourscheid.github.io/7DaysOfCode/LogicWithJS/exercise01/">
+      <b>🥇 Resultado 🥇</b>
+    </a>
+  </h4>
+
   <hr></hr>
 </details>
 
-- Projeto 2: Variáveis
+<!-- Projeto 2 -->
+<details>
+  <summary><b>Projeto 2: Variáveis</b></summary>
+
+  Dado as seguintes perguntas:
+  - Qual o seu nome?
+  - Quantos anos você tem?
+  - Qual linguagem de programação você está estudando?
+
+  No final, o sistema vai exibir a mensagem:
+
+  <b>"Olá <i>[nome]</i>, você tem <i>[idade]</i> anos e já está aprendendo <i>[linguagem]</i>!"</b>
+
+  <h3>Desafio extra:</h3>
+  Complemente o código para que, depois de exibir a mensagem anterior, o programa pergunte:
+  <p>&nbsp;&nbsp;<b>"Você gosta de estudar <i>[linguagem]</i>?"</b></p>
+
+  Dependendo da resposta, ele deve mostrar uma das seguintes mensagens:
+  - Muito bom! Continue estudando e você terá muito sucesso.
+  - Ahh que pena... Já tentou aprender outras linguagens?
+
+  <h4>
+    <a href="https://djonibourscheid.github.io/7DaysOfCode/LogicWithJS/exercise02/">
+      <b>🥇 Resultado 🥇</b>
+    </a>
+  </h4>
+
+  <hr></hr>
+</details>
+
 - Projeto 3: Fluxo de decisão
 - Projeto 4: Loops e randomização
 - Projeto 5: Arrays e coleções
@@ -62,6 +96,7 @@ const stringDez = '10'
 ## ⚔ Desafios Extras
 - [x] Completar todos os projetos
 - [x] Integrar cada projeto com HTML e CSS
+- [ ] Documentar todos os projetos
 
 ## 🛠 Tecnologias
 Foram usadas na construção do projeto:
