@@ -15,18 +15,18 @@
 </p>
 
 <h4 align="center">
-  🚧 Projeto em desenvolvimento... 🏗 20% 🚧
+  🚧 Projeto em desenvolvimento... 🏗 30% 🚧
 </h4>
 
 
 ## ✨ Projeto
 <p align="center">
-  <a href="http://https://djonibourscheid.github.io/7DaysOfCode/#LandingPage">
+  <a href="https://djonibourscheid.github.io/7DaysOfCode/#LandingPage">
     <img alt="Gif apresentação do projeto" src="./.github/project.gif">
   </a>
 </p>
 <p align="center">
-  <a href="http://https://djonibourscheid.github.io/7DaysOfCode/#LandingPage">
+  <a href="https://djonibourscheid.github.io/7DaysOfCode/#LandingPage">
     <img alt="Acessar o projeto pelo github pages" src="https://img.shields.io/badge/Acessar%20Projeto%20-Github%20Pages-%2304D361">
   </a>
 </p>
@@ -39,7 +39,7 @@ O layout da aplicação está disponível no Figma:
 </a>
 
 ## ⚔ Desafios Extras
-- [ ] Responsividade
+- [ ] Responsividades
 
 ## 🛠 Tecnologias
 Foram usadas na construção do projeto:
