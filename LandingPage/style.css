@@ -157,15 +157,18 @@ a {
 
 /* JOBS */
 .jobs__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6.4rem;
-
   padding: 0 3.2rem;
   margin: 9.6rem auto;
 }
 
+.jobs__container,
+.jobs__container>* {
+  display: flex;
+  flex-direction: column;
+  gap: 6.4rem;
+}
+
+/* header */
 .text__wrapper {
   display: flex;
   flex-direction: column;
@@ -195,4 +198,47 @@ a {
   font-size: 2rem;
   line-height: 3rem;
   color: var(--gray-500);
+}
+
+/* main */
+.jobs__container>main {
+  max-width: 76.8rem;
+  width: 100%;
+  margin: 0 auto;
+
+  font-weight: 500;
+  color: var(--gray-900);
+}
+
+.jobs__container section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.jobs__container section h2 {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-bottom: 0.8rem;
+}
+
+.job {
+  padding: 2.4rem;
+  border: 0.1rem solid #EAECF0;
+  border-radius: 1.6rem;
+}
+
+.job h3 {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  margin-bottom: 3.2rem;
+}
+
+.job-description {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: var(--gray-500);
+
+  display: inline-flex;
+  gap: 2.4rem;
 }
