@@ -15,7 +15,7 @@
 </p>
 
 <h4 align="center">
-  🚧 Projeto em desenvolvimento... 🏗 30% 🚧
+  🚧 Projeto em desenvolvimento... 🏗 50% 🚧
 </h4>
 
 
@@ -39,7 +39,7 @@ O layout da aplicação está disponível no Figma:
 </a>
 
 ## ⚔ Desafios Extras
-- [ ] Responsividades
+- [ ] Responsividade
 
 ## 🛠 Tecnologias
 Foram usadas na construção do projeto:
