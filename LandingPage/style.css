@@ -72,7 +72,7 @@ a {
 .header__links a:hover {
   color: var(--gray-900);
   text-decoration: underline;
-  text-shadow: 0 0 5px var(--color-red-smooth);
+  text-shadow: 0 0 0.5rem var(--color-red-smooth);
 }
 
 .login-buttons {
@@ -241,4 +241,52 @@ a {
 
   display: inline-flex;
   gap: 2.4rem;
+}
+
+
+/* FEEDBACK */
+.feedback__container {
+  background: rgba(196, 25, 25, 0.03);
+  border-radius: 1.6rem;
+
+  padding: 6.4rem;
+  margin: 0 auto 9.6rem;
+  text-align: center;
+}
+
+.feedback__container .title {
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: var(--color-red);
+}
+
+.feedback {
+  font-weight: 500;
+  color: var(--gray-900);
+}
+
+.feedback h3 {
+  font-size: 3.6rem;
+  line-height: 4.4rem;
+  letter-spacing: -0.02em;
+  margin: 1.6rem auto 3.2rem;
+}
+
+.feedback-author img {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+}
+
+.feedback-author h4 {
+  line-height: 2.4rem;
+  margin: 1.6rem auto 0.4rem;
+}
+
+.feedback-author p {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: var(--gray-500);
 }
