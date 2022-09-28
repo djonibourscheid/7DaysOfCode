@@ -15,7 +15,7 @@
 </p>
 
 <h4 align="center">
-  🚧 Projeto em desenvolvimento... 🏗 50% 🚧
+  ✅ Projeto concluído ✅
 </h4>
 
 
