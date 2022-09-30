@@ -39,8 +39,9 @@ body {
 
 /* elements hover opacity 0.9 */
 .searchMovie__wrapper:hover>*,
-.favoriteMovies__wrapper input:hover {
-  opacity: 0.9;
+.favoriteMovies__wrapper:hover,
+.movie_infos .movie_favorite:hover {
+  opacity: 0.8;
 }
 
 
@@ -105,20 +106,18 @@ header h1 {
   flex-direction: row-reverse;
   align-items: center;
   gap: 1rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .favoriteMovies__wrapper input {
   /* remove user-agent */
   all: unset;
-  cursor: pointer;
   width: 1.6rem;
   height: 1.6rem;
   border: 0.2rem solid var(--bg-checkbox);
   border-radius: 0.4rem;
-  background-color: transparent;
-  transition:
-    opacity 0.3s ease-in-out,
-    background-color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
 }
 
 .favoriteMovies__wrapper input:checked {
@@ -129,6 +128,7 @@ header h1 {
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 2.2rem;
+  cursor: inherit;
 }
 
 
@@ -186,17 +186,24 @@ header h1 {
   line-height: 2.2rem;
 }
 
-.movie_infos span {
-  display: flex;
-  align-items: center;
-}
-
 .movie_infos .movie_rate {
   grid-area: rate;
 }
 
 .movie_infos .movie_favorite {
   grid-area: favorite;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.movie_favorite .heart {
+  background: url(./assets/heart.svg) no-repeat center;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.movie_favorite.favorite .heart {
+  background-image: url(./assets/heart-filled.svg);
 }
 
 .movie_description {
