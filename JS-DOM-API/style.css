@@ -133,7 +133,7 @@ header h1 {
 
 
 /* MAIN */
-.movie__container {
+.movies__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -170,7 +170,7 @@ header h1 {
   gap: 2.4rem 1.8rem;
 }
 
-.movie_infos .movie_name {
+.movie_infos h2 {
   grid-area: name;
 
   font-weight: 500;
@@ -196,10 +196,16 @@ header h1 {
   transition: opacity 0.3s ease-in-out;
 }
 
+/* não atrapalhar no onclick de favoritar o filme */
+.movie_infos .movie_favorite>* {
+  pointer-events: none;
+}
+
 .movie_favorite .heart {
   background: url(./assets/heart.svg) no-repeat center;
   width: 2.2rem;
   height: 2.2rem;
+  transition: background-image 0.15s ease-in-out;
 }
 
 .movie_favorite.favorite .heart {
@@ -208,6 +214,7 @@ header h1 {
 
 .movie_description {
   max-width: 59rem;
+  width: 100%;
   color: var(--text-description);
   font-weight: 500;
   font-size: 1.8rem;
