@@ -1,0 +1,66 @@
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 1.6rem;
+  color: #FFFFFF;
+  background-color: #17162E;
+}
+
+.container {
+  max-width: 120rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+/* HEADER */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+header h1 {
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 4.5rem;
+  margin-bottom: 1.8rem;
+}
+
+header>input {
+  max-width: 63rem;
+  width: 100%;
+  padding: 2.5rem;
+  background: #FFFFFF;
+  opacity: 0.2;
+  border-radius: 0.8rem;
+
+  font-family: Kumbh Sans;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.2rem;
+}
+
+/* favorite movies */
+header div {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+}
+
+header div input {
+  border: 0.2rem solid #706EA8;
+  border-radius: 0.4rem;
+  color: #706EA8;
+  background-color: transparent;
+}
+
+header div label {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.2rem;
+}
