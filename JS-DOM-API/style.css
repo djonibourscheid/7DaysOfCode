@@ -24,9 +24,17 @@ body {
 
 .container {
   max-width: 120rem;
-  width: 100%;
   margin: 0 auto;
-  padding: 6rem 0;
+  padding: 6rem 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6.4rem;
+}
+
+.container>* {
+  width: 100%;
 }
 
 /* elements hover opacity 0.9 */
@@ -79,9 +87,13 @@ header h1 {
 }
 
 .searchMovie__wrapper button {
+  width: 7.5rem;
+  height: 7.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   border-radius: 0 0.8rem 0.8rem 0;
-  padding: 2.5rem;
   background: #454558;
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
@@ -121,3 +133,76 @@ header h1 {
 
 
 /* MAIN */
+.movie__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+.movie {
+  background: var(--bg-card);
+  border-radius: 0.4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+
+  padding: 3rem 4.6rem;
+  width: 100%;
+}
+
+.movie_image {
+  width: 14rem;
+  height: 14rem;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 2rem 2rem 3rem rgba(0, 0, 0, 0.3);
+}
+
+.movie_infos {
+  flex: 1;
+  display: grid;
+  grid-template-areas:
+    "name name"
+    "rate favorite";
+  gap: 2.4rem 1.8rem;
+}
+
+.movie_infos .movie_name {
+  grid-area: name;
+
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+
+.movie_infos p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+
+.movie_infos span {
+  display: flex;
+  align-items: center;
+}
+
+.movie_infos .movie_rate {
+  grid-area: rate;
+}
+
+.movie_infos .movie_favorite {
+  grid-area: favorite;
+}
+
+.movie_description {
+  max-width: 59rem;
+  color: var(--text-description);
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+}
