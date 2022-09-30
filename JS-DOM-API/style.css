@@ -2,6 +2,12 @@
   font-size: 62.5%;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Kumbh Sans', sans-serif;
   font-size: 1.6rem;
@@ -13,6 +19,7 @@ body {
   max-width: 120rem;
   width: 100%;
   margin: 0 auto;
+  padding: 6rem 0;
 }
 
 
