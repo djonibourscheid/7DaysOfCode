@@ -1,7 +1,14 @@
-function favoriteMovie(event) {
-  event.target.classList.toggle("favorite");
-}
+import APIkey from './environment/apiKey.js';
 
+getPopularMovies();
+
+async function getPopularMovies() {
+  const url = `https://api.themoviedb.org/3/trending/movie/week?api_key=${APIkey}&language=pt-BR`;
+  const moviesResponse = await fetch(url).then(response => response.json());
+
+  const movies = moviesResponse.results;
+  movies.forEach(movie => renderMovie(movie));
+}
 
 function renderMovie(movie) {
   const moviesContainer = document.querySelector(".movies__container");
@@ -12,7 +19,7 @@ function renderMovie(movie) {
 
   const movieImage = document.createElement("img");
   movieImage.className = "movie_image";
-  movieImage.src = movie.image;
+  movieImage.src = `https://image.tmdb.org/t/p/w220_and_h330_face${movie.poster_path}`;
   movieImage.alt = `Capa do filme ${movie.title}`;
 
 
@@ -20,15 +27,16 @@ function renderMovie(movie) {
   movieInfos.className = "movie_infos";
 
   const movieTitle = document.createElement("h2");
-  movieTitle.innerText = `${movie.title} (${movie.year})`;
+  const year = movie.release_date.slice(0, 4);
+  movieTitle.innerText = `${movie.title} (${year})`;
 
   const movieRate = document.createElement("p");
   movieRate.className = "movie_rate";
-  movieRate.innerHTML = `<img src="./assets/star.svg"> ${movie.rating}`;
+  const rate = movie.vote_average.toFixed(1);
+  movieRate.innerHTML = `<img src="./assets/star.svg"> ${rate}`;
 
   const movieFavorite = document.createElement("p");
   movieFavorite.className = "movie_favorite";
-  console.log(movie.isFavorited);
   if (movie.isFavorited) { movieFavorite.classList.add("favorite") };
   movieFavorite.addEventListener("click", () => { favoriteMovie(event) });
   movieFavorite.innerHTML = `<span class="heart"></span> Favoritar`;
@@ -38,38 +46,13 @@ function renderMovie(movie) {
 
   const movieDescription = document.createElement("p");
   movieDescription.className = "movie_description";
-  movieDescription.innerText = movie.description;
+  movieDescription.innerText = movie.overview;
 
 
   movieCard.append(movieImage, movieInfos, movieDescription);
   moviesContainer.appendChild(movieCard);
 }
 
-const movies = [
-  {
-    image: 'https://img.elo7.com.br/product/original/3FBA809/big-poster-filme-batman-2022-90x60-cm-lo002-poster-batman.jpg',
-    title: 'Batman',
-    year: 2022,
-    rating: 9.2,
-    isFavorited: true,
-    description: "Após dois anos espreitando as ruas como Batman, Bruce Wayne se encontra nas profundezas mais sombrias de Gotham City. Com poucos aliados confiáveis, o vigilante solitário se estabelece como a personificação da vingança para a população."
-  },
-  {
-    image: 'https://upload.wikimedia.org/wikipedia/pt/thumb/9/9b/Avengers_Endgame.jpg/250px-Avengers_Endgame.jpg',
-    title: 'Avengers',
-    year: 2019,
-    rating: 9.2,
-    isFavorited: false,
-    description: "Descrição do filme…"
-  },
-  {
-    image: 'https://upload.wikimedia.org/wikipedia/en/1/17/Doctor_Strange_in_the_Multiverse_of_Madness_poster.jpg',
-    title: 'Doctor Strange',
-    year: 2022,
-    rating: 9.2,
-    isFavorited: false,
-    description: "Descrição do filme…"
-  },
-]
-
-movies.forEach(movie => renderMovie(movie))
+function favoriteMovie(event) {
+  event.target.classList.toggle("favorite");
+}
