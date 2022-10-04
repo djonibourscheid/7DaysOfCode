@@ -1,18 +1,27 @@
 import APIkey from './environment/apiKey.js';
 
+// Executa assim que inicia
 getPopularMovies();
 
+// Pesquisar por filmes
 const searchMovieForm = document.querySelector('.searchMovie__wrapper');
 const searchInput = document.querySelector('input[name=search]');
 searchMovieForm.addEventListener('submit', event => {
   event.preventDefault()
 
   const searchValue = searchInput.value.trim();
-  getMoviesByName(searchValue);
+  // Caso não tenha nada, mostra a pagina incial
+  if (searchValue == "") {
+    return getPopularMovies();
+  }
+
+  return getMoviesByName(searchValue);
 })
 
+// Salvar/remover filmes favoritados
 let favoriteMoviesList = JSON.parse(localStorage.getItem("favoriteMoviesStorage")) || [];
 
+// Mostrar filmes favoritados/todos os filmes
 const favoriteMoviesCheckbox = document.getElementById("favoriteMovies");
 favoriteMoviesCheckbox.addEventListener("click", () => {
   // Se está marcado, mostra apenas os filmes favoritados
@@ -24,6 +33,8 @@ favoriteMoviesCheckbox.addEventListener("click", () => {
   }
 })
 
+
+// Funções
 async function getPopularMovies() {
   const url = `https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}&language=pt-BR&include_adult=false`;
   const moviesResponse = await fetch(url).then(response => response.json());
