@@ -40,7 +40,8 @@ body {
 /* elements hover opacity 0.9 */
 .searchMovie__wrapper:hover>*,
 .favoriteMovies__wrapper:hover,
-.movie_infos .movie_favorite:hover {
+.movie_infos .movie_favorite:hover,
+.show_more:hover {
   opacity: 0.8;
 }
 
@@ -71,12 +72,12 @@ header h1 {
   flex: 1;
 
   padding: 2.5rem;
-  background: #454558;
+  background-color: #454558;
 
   border-radius: 0.8rem 0 0 0.8rem;
   border: none;
 
-  font: 500 1.8rem Kumbh Sans;
+  font: 500 1.8rem 'Kumbh Sans', sans-serif;
   line-height: 2.2rem;
   color: var(--text-white);
 
@@ -95,7 +96,7 @@ header h1 {
   align-items: center;
   border: none;
   border-radius: 0 0.8rem 0.8rem 0;
-  background: #454558;
+  background-color: #454558;
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
 }
@@ -219,4 +220,24 @@ header h1 {
   font-weight: 500;
   font-size: 1.8rem;
   line-height: 3.2rem;
+}
+
+/* botão mostrar mais resultados */
+.show_more {
+  display: flex;
+  cursor: pointer;
+
+  margin: 4rem auto 0;
+  padding: 2.25rem;
+  background-color: #454558;
+
+  border-radius: 0.8rem;
+  border: none;
+
+  font: 500 1.8rem 'Kumbh Sans', sans-serif;
+  line-height: 2.2rem;
+  color: var(--text-white);
+
+  transition: opacity 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
 }
