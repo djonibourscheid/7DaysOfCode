@@ -4,7 +4,6 @@ getPopularMovies();
 
 const searchMovieForm = document.querySelector('.searchMovie__wrapper');
 const searchInput = document.querySelector('input[name=search]');
-
 searchMovieForm.addEventListener('submit', event => {
   event.preventDefault()
 
@@ -14,6 +13,16 @@ searchMovieForm.addEventListener('submit', event => {
 
 let favoriteMoviesList = JSON.parse(localStorage.getItem("favoriteMoviesStorage")) || [];
 
+const favoriteMoviesCheckbox = document.getElementById("favoriteMovies");
+favoriteMoviesCheckbox.addEventListener("click", () => {
+  // Se está marcado, mostra apenas os filmes favoritados
+  if (favoriteMoviesCheckbox.checked) {
+    showOnlyFavoriteMovies();
+  } else {
+    const movies = document.querySelectorAll(".movie");
+    movies.forEach(movie => { movie.style.display = "inherit" })
+  }
+})
 
 async function getPopularMovies() {
   const url = `https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}&language=pt-BR&include_adult=false`;
@@ -85,7 +94,6 @@ function renderMovie(movie) {
   moviesContainer.appendChild(movieCard);
 }
 
-
 function favoriteMovie(event) {
   event.target.classList.toggle("favorite");
 
@@ -101,4 +109,16 @@ function favoriteMovie(event) {
   }
 
   localStorage.setItem("favoriteMoviesStorage", JSON.stringify(favoriteMoviesList));
+}
+
+function showOnlyFavoriteMovies() {
+  const movies = document.querySelectorAll(".movie");
+  movies.forEach(movie => {
+    const movieId = Number(movie.id);
+
+    // Caso o filmes não esteja na lista de favoritados, ele perde o display
+    if (!favoriteMoviesList.includes(movieId)) {
+      movie.style.display = "none";
+    }
+  });
 }
