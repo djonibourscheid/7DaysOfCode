@@ -12,7 +12,7 @@ searchMovieForm.addEventListener('submit', event => {
   getMoviesByName(searchValue);
 })
 
-let favoriteMovies = JSON.parse(localStorage.getItem("favoriteMoviesStorage")) || [];
+let favoriteMoviesList = JSON.parse(localStorage.getItem("favoriteMoviesStorage")) || [];
 
 
 async function getPopularMovies() {
@@ -40,7 +40,7 @@ function clearMoviesContainer() {
 
 function renderMovie(movie) {
   const { id, title, poster_path, vote_average, release_date, overview } = movie;
-  const isFavorited = false;
+  const isFavorited = favoriteMoviesList.includes(id);
 
   const moviesContainer = document.querySelector(".movies__container");
 
@@ -89,16 +89,16 @@ function renderMovie(movie) {
 function favoriteMovie(event) {
   event.target.classList.toggle("favorite");
 
-  const movieId = event.path[2].id;
-  const movieIndexInStorage = favoriteMovies.indexOf(movieId);
+  const movieId = Number(event.path[2].id);
+  const movieIndexInStorage = favoriteMoviesList.indexOf(movieId);
 
   // Se já está favoritado, remove
   // caso contrário, adiciona na lista
   if (movieIndexInStorage != -1) {
-    favoriteMovies.splice(movieIndexInStorage, 1);
+    favoriteMoviesList.splice(movieIndexInStorage, 1);
   } else {
-    favoriteMovies.push(movieId);
+    favoriteMoviesList.push(movieId);
   }
 
-  localStorage.setItem("favoriteMoviesStorage", JSON.stringify(favoriteMovies));
+  localStorage.setItem("favoriteMoviesStorage", JSON.stringify(favoriteMoviesList));
 }
