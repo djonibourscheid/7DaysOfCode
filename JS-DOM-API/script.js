@@ -1,5 +1,13 @@
 import APIkey from './environment/apiKey.js';
 
+// Variaveis globais
+// Começa com 2 porque o 1 já é chamado quando carrega a página
+let pageId = 2; // QUANDO FOR REDEFINIR, PRECISA SER 2
+
+// Salvar/remover filmes favoritados
+let favoriteMoviesList = JSON.parse(localStorage.getItem("favoriteMoviesStorage")) || [];
+
+
 // Executa assim que inicia
 getPopularMovies();
 
@@ -18,9 +26,6 @@ searchMovieForm.addEventListener('submit', event => {
   return getMoviesByName(searchValue);
 })
 
-// Salvar/remover filmes favoritados
-let favoriteMoviesList = JSON.parse(localStorage.getItem("favoriteMoviesStorage")) || [];
-
 // Mostrar filmes favoritados/todos os filmes
 const favoriteMoviesCheckbox = document.getElementById("favoriteMovies");
 favoriteMoviesCheckbox.addEventListener("click", () => {
@@ -33,24 +38,56 @@ favoriteMoviesCheckbox.addEventListener("click", () => {
   }
 })
 
+// Botão de mostrar mais resultados
+const showMoreButton = document.querySelector(".show_more");
+showMoreButton.addEventListener("click", () => {
+  if (showMoreButton.value == "getPopular") {
+    getPopularMovies(pageId);
+  } else
+    if (showMoreButton.value == "getByName") {
+      const searchValue = searchInput.value.trim();
+      getMoviesByName(searchValue, pageId);
+    }
+  pageId++;
+})
+
 
 // Funções
-async function getPopularMovies() {
-  const url = `https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}&language=pt-BR&include_adult=false`;
+async function getPopularMovies(pageNum) {
+  // Caso não seja passado pageId, é definido como 1 por padrão.
+  // Atualmente funciona com page=undefined, mas para evitar erros futuros
+  if (!pageNum) {
+    pageNum = 1;
+  }
+  const url = `https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}&language=pt-BR&include_adult=false&page=${pageNum}`;
   const moviesResponse = await fetch(url).then(response => response.json());
 
-  clearMoviesContainer();
+  if (pageNum < 2) {
+    clearMoviesContainer();
+    pageId = 2; // PRECISA SER 2, SENÃO ENTRA EM LOOPING
+  }
+
   const movies = moviesResponse.results;
-  movies.forEach(movie => renderMovie(movie));
+  movies.forEach(movie => renderMovie(movie, "getPopular"));
 }
 
-async function getMoviesByName(title) {
-  const url = `https://api.themoviedb.org/3/search/movie?api_key=${APIkey}&language=pt-BR&query=${title}&include_adult=false`;
+async function getMoviesByName(title, pageNum) {
+  console.log(pageNum);
+  // Caso não seja passado pageId, é definido como 1 por padrão.
+  // Atualmente funciona com page=undefined, mas para evitar erros futuros
+  if (!pageNum) {
+    pageNum = 1;
+  }
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=${APIkey}&language=pt-BR&query=${title}&include_adult=false&page=${pageNum}`;
   const moviesResponse = await fetch(url).then(response => response.json());
 
-  clearMoviesContainer();
+  if (pageNum < 2) {
+    clearMoviesContainer();
+    pageId = 2; // PRECISA SER 2, SENÃO ENTRA EM LOOPING
+  }
+
   const movies = moviesResponse.results;
-  movies.forEach(movie => renderMovie(movie));
+  movies.forEach(movie => renderMovie(movie, "getByName"));
 }
 
 function clearMoviesContainer() {
@@ -58,7 +95,7 @@ function clearMoviesContainer() {
   moviesContainer.innerHTML = "";
 }
 
-function renderMovie(movie) {
+function renderMovie(movie, method) {
   const { id, title, poster_path, vote_average, release_date, overview } = movie;
   const isFavorited = favoriteMoviesList.includes(id);
 
@@ -103,6 +140,11 @@ function renderMovie(movie) {
 
   movieCard.append(movieImage, movieInfos, movieDescription);
   moviesContainer.appendChild(movieCard);
+
+
+  // Mudando o mostrar mais
+  const showMoreButton = document.querySelector(".show_more");
+  showMoreButton.value = method;
 }
 
 function favoriteMovie(event) {
