@@ -72,7 +72,6 @@ async function getPopularMovies(pageNum) {
 }
 
 async function getMoviesByName(title, pageNum) {
-  console.log(pageNum);
   // Caso não seja passado pageId, é definido como 1 por padrão.
   // Atualmente funciona com page=undefined, mas para evitar erros futuros
   if (!pageNum) {
@@ -96,7 +95,8 @@ function clearMoviesContainer() {
 }
 
 function renderMovie(movie, method) {
-  const { id, title, poster_path, vote_average, release_date, overview } = movie;
+  const { id, title, poster_path } = movie;
+  let { vote_average, release_date, overview } = movie;
   const isFavorited = favoriteMoviesList.includes(id);
 
   const moviesContainer = document.querySelector(".movies__container");
@@ -116,13 +116,13 @@ function renderMovie(movie, method) {
   movieInfos.className = "movie_infos";
 
   const movieTitle = document.createElement("h2");
-  const year = release_date.slice(0, 4);
-  movieTitle.innerText = `${movie.title} (${year})`;
+  if (release_date == "") { release_date = "Não informado"; }
+  else { release_date = release_date.slice(0, 4) }
+  movieTitle.innerText = `${movie.title} (${release_date})`;
 
   const movieRate = document.createElement("p");
   movieRate.className = "movie_rate";
-  const rate = vote_average.toFixed(1)
-  movieRate.innerHTML = `<img src="./assets/star.svg"> ${rate}`;
+  movieRate.innerHTML = `<img src="./assets/star.svg"> ${vote_average.toFixed(1)}`;
 
   const movieFavorite = document.createElement("p");
   movieFavorite.className = "movie_favorite";
@@ -135,6 +135,7 @@ function renderMovie(movie, method) {
 
   const movieDescription = document.createElement("p");
   movieDescription.className = "movie_description";
+  if (overview == "") { overview = "Sinopse em português não informada." };
   movieDescription.innerText = overview;
 
 
@@ -189,7 +190,7 @@ scrollToTop.onclick = () => {
 // fazer o botão aparecer quando já tiver scrollado um pouco
 window.addEventListener("scroll", () => {
   const positionY = window.scrollY;
-  if (positionY < 550) {
+  if (positionY < 300) {
     scrollToTop.classList.add("hide");
   } else {
     scrollToTop.classList.remove("hide");

@@ -22,6 +22,29 @@ body {
   background-color: #17162E;
 }
 
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 0.6rem;
+  height: 0.6rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--text-input);
+  border-radius: 0.3rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border: none;
+}
+
+body,
+.movie_description {
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-input) transparent;
+}
+
+
 .hide {
   display: none !important;
 }
@@ -39,7 +62,6 @@ body {
   color: var(--text-white);
   font-size: 1.6rem;
   cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
 }
 
 .container {
@@ -55,6 +77,15 @@ body {
 
 .container>* {
   width: 100%;
+}
+
+/* transition opacity */
+.scrolltop,
+.searchMovie__wrapper>*,
+.favoriteMovies__wrapper,
+.movie_infos .movie_favorite,
+.show_more {
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* elements hover opacity 0.9 */
@@ -102,7 +133,6 @@ header h1 {
   line-height: 2.2rem;
   color: var(--text-white);
 
-  transition: opacity 0.3s ease-in-out;
 }
 
 .searchMovie__wrapper input::placeholder {
@@ -119,7 +149,6 @@ header h1 {
   border-radius: 0 0.8rem 0.8rem 0;
   background-color: #454558;
   cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
 }
 
 /* favorite movies */
@@ -129,7 +158,6 @@ header h1 {
   align-items: center;
   gap: 1rem;
   cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
 }
 
 .favoriteMovies__wrapper input {
@@ -215,7 +243,6 @@ header h1 {
 .movie_infos .movie_favorite {
   grid-area: favorite;
   cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
 }
 
 /* não atrapalhar no onclick de favoritar o filme */
@@ -237,6 +264,10 @@ header h1 {
 .movie_description {
   max-width: 59rem;
   width: 100%;
+  max-height: 19rem;
+  overflow-y: auto;
+  text-align: justify;
+  padding-right: 1rem;
   color: var(--text-description);
   font-weight: 500;
   font-size: 1.8rem;
