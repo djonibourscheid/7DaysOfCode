@@ -12,6 +12,8 @@ searchMovieForm.addEventListener('submit', event => {
   getMoviesByName(searchValue);
 })
 
+let favoriteMovies = JSON.parse(localStorage.getItem("favoriteMoviesStorage")) || [];
+
 
 async function getPopularMovies() {
   const url = `https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}&language=pt-BR&include_adult=false`;
@@ -37,13 +39,14 @@ function clearMoviesContainer() {
 }
 
 function renderMovie(movie) {
-  const { title, poster_path, vote_average, release_date, overview } = movie;
+  const { id, title, poster_path, vote_average, release_date, overview } = movie;
   const isFavorited = false;
 
   const moviesContainer = document.querySelector(".movies__container");
 
   const movieCard = document.createElement("div");
   movieCard.className = "movie";
+  movieCard.id = id;
 
 
   const movieImage = document.createElement("img");
@@ -85,4 +88,17 @@ function renderMovie(movie) {
 
 function favoriteMovie(event) {
   event.target.classList.toggle("favorite");
+
+  const movieId = event.path[2].id;
+  const movieIndexInStorage = favoriteMovies.indexOf(movieId);
+
+  // Se já está favoritado, remove
+  // caso contrário, adiciona na lista
+  if (movieIndexInStorage != -1) {
+    favoriteMovies.splice(movieIndexInStorage, 1);
+  } else {
+    favoriteMovies.push(movieId);
+  }
+
+  localStorage.setItem("favoriteMoviesStorage", JSON.stringify(favoriteMovies));
 }
