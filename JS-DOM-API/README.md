@@ -12,6 +12,7 @@
   <a href="#-projeto">Projeto</a> •
   <a href="#-layout">Layout</a> •
   <a href="#-desafios-extras">Desafios Extras</a> •
+  <a href="#-como-rodar-o-projeto">Como rodar</a> •
   <a href="#-tecnologias">Tecnologias</a> •
   <a href="#-autor">Autor</a> •
   <a href="#-licença">Licença</a>
@@ -45,6 +46,9 @@ O layout da aplicação está disponível no Figma:
 - [ ] Responsividade
 - [x] Botão de mostrar mais resultados
 - [x] Pequenos detalhes para melhorar a experiência do usuário
+
+## 🧰 Como rodar o projeto
+[Crie sua conta](https://www.themoviedb.org/signup) no [The Movie DataBase](https://www.themoviedb.org), copie sua [chave da API](https://www.themoviedb.org/settings/api). Copie o arquivo `environment/exampleApiKey.js` e renomeie para `apiKey.js` com sua key na variável. Pronto 🎆 só iniciar o projeto normalmente.
 
 ## 🛠 Tecnologias
 Foram usadas na construção do projeto:
