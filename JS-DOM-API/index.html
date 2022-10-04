@@ -15,13 +15,17 @@
 </head>
 
 <body>
+  <button class="scrolltop hide" aria-label="Role para o topo" title="Role para o topo">&uparrow;</button>
+
   <div class="container">
     <header>
       <h1>Filmes Populares</h1>
 
       <form class="searchMovie__wrapper">
         <input name="search" class="searchMovie" type="text" placeholder="Digite algum filme para pesquisar...">
-        <button type="submit"><img src="./assets/search.svg" alt="Buscar"></button>
+        <button type="submit" aria-label="Pesquisar" title="Pesquisar">
+          <img src="./assets/search.svg" alt="Buscar">
+        </button>
       </form>
 
       <div class="favoriteMovies__wrapper">

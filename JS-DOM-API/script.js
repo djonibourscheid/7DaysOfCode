@@ -175,3 +175,23 @@ function showOnlyFavoriteMovies() {
     }
   });
 }
+
+
+// SCROLLTOP
+const scrollToTop = document.querySelector('.scrolltop');
+scrollToTop.onclick = () => {
+  window.scroll({
+    top: 0,
+    behavior: "smooth"
+  });
+};
+
+// fazer o botão aparecer quando já tiver scrollado um pouco
+window.addEventListener("scroll", () => {
+  const positionY = window.scrollY;
+  if (positionY < 550) {
+    scrollToTop.classList.add("hide");
+  } else {
+    scrollToTop.classList.remove("hide");
+  }
+})
