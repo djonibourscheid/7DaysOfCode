@@ -106,10 +106,19 @@ function renderMovie(movie, method) {
   movieCard.id = id;
 
 
+  const movieLink = document.createElement("a");
+  movieLink.href = `https://www.themoviedb.org/movie/${id}`;
+  movieLink.target = "_blank";
+  movieLink.rel = "noopener noreferrer";
+
   const movieImage = document.createElement("img");
   movieImage.className = "movie_image";
+  movieImage.ariaLabel = "Abrir página do filme";
+  movieImage.title = "Abrir página do filme";
   movieImage.src = `https://image.tmdb.org/t/p/w220_and_h330_face${poster_path}`;
   movieImage.alt = `Capa do filme ${title}`;
+
+  movieLink.appendChild(movieImage);
 
 
   const movieInfos = document.createElement("div");
@@ -136,10 +145,10 @@ function renderMovie(movie, method) {
   const movieDescription = document.createElement("p");
   movieDescription.className = "movie_description";
   if (overview == "") { overview = "Sinopse em português não informada." };
-  movieDescription.innerText = overview;
+  movieDescription.innerHTML = `${overview} <br><br> <a href="https://www.themoviedb.org/movie/${id}" target="_blank" rel="noopener noreferrer">Abrir página do filme &nbsp;&rightarrow;</a>`;
 
 
-  movieCard.append(movieImage, movieInfos, movieDescription);
+  movieCard.append(movieLink, movieInfos, movieDescription);
   moviesContainer.appendChild(movieCard);
 
 

@@ -84,6 +84,7 @@ body,
 .searchMovie__wrapper>*,
 .favoriteMovies__wrapper,
 .movie_infos .movie_favorite,
+.movie_description a,
 .show_more {
   transition: opacity 0.3s ease-in-out;
 }
@@ -93,6 +94,7 @@ body,
 .searchMovie__wrapper:hover>*,
 .favoriteMovies__wrapper:hover,
 .movie_infos .movie_favorite:hover,
+.movie_description a:hover,
 .show_more:hover {
   opacity: 0.8;
 }
@@ -205,9 +207,9 @@ header h1 {
 
 .movie_image {
   width: 14rem;
-  height: 14rem;
-  object-fit: cover;
-  border-radius: 50%;
+  height: 19rem;
+  cursor: pointer;
+  border-radius: 0.4rem;
   box-shadow: 2rem 2rem 3rem rgba(0, 0, 0, 0.3);
 }
 
@@ -272,6 +274,12 @@ header h1 {
   font-weight: 500;
   font-size: 1.8rem;
   line-height: 3.2rem;
+}
+
+.movie_description a {
+  color: var(--text-white);
+  text-decoration: none;
+  margin-top: 1rem;
 }
 
 /* botão mostrar mais resultados */
