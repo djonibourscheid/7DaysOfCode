@@ -34,7 +34,7 @@ favoriteMoviesCheckbox.addEventListener("click", () => {
     showOnlyFavoriteMovies();
   } else {
     const movies = document.querySelectorAll(".movie");
-    movies.forEach(movie => { movie.style.display = "inherit" })
+    movies.forEach(movie => { movie.classList.remove("hide"); })
   }
 })
 
@@ -110,9 +110,9 @@ function renderMovie(movie, method) {
   movieLink.href = `https://www.themoviedb.org/movie/${id}`;
   movieLink.target = "_blank";
   movieLink.rel = "noopener noreferrer";
+  movieLink.className = "movie_image";
 
   const movieImage = document.createElement("img");
-  movieImage.className = "movie_image";
   movieImage.ariaLabel = "Abrir página do filme";
   movieImage.title = "Abrir página do filme";
   movieImage.src = `https://image.tmdb.org/t/p/w220_and_h330_face${poster_path}`;
@@ -181,15 +181,15 @@ function showOnlyFavoriteMovies() {
 
     // Caso o filmes não esteja na lista de favoritados, ele perde o display
     if (!favoriteMoviesList.includes(movieId)) {
-      movie.style.display = "none";
+      movie.classList.add("hide");
     }
   });
 }
 
 
 // SCROLLTOP
-const scrollToTop = document.querySelector('.scrolltop');
-scrollToTop.onclick = () => {
+const scrollTopButton = document.querySelector('.scrolltop');
+scrollTopButton.onclick = () => {
   window.scroll({
     top: 0,
     behavior: "smooth"
@@ -200,8 +200,29 @@ scrollToTop.onclick = () => {
 window.addEventListener("scroll", () => {
   const positionY = window.scrollY;
   if (positionY < 300) {
-    scrollToTop.classList.add("hide");
+    scrollTopButton.classList.add("hide");
   } else {
-    scrollToTop.classList.remove("hide");
+    scrollTopButton.classList.remove("hide");
   }
 })
+
+
+setPositionScrollTopButton();
+window.addEventListener("resize", setPositionScrollTopButton);
+
+function setPositionScrollTopButton() {
+  const windowWidth = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+
+  const containerWidth = parseFloat(getComputedStyle(document.querySelector(".container")).getPropertyValue('width'));
+
+  let marginX;
+
+  if (windowWidth > containerWidth) {
+    marginX = (windowWidth - containerWidth) / 2;
+    scrollTopButton.style.right = `calc(${marginX}px - 2rem)`;
+  } else {
+    scrollTopButton.style.right = "";
+  }
+}
