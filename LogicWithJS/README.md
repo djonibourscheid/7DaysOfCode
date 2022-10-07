@@ -87,7 +87,33 @@ const stringDez = '10'
   <hr></hr>
 </details>
 
-- Projeto 3: Fluxo de decisão
+<!-- Projeto 3 -->
+<details>
+  <summary><b>Projeto 3: Fluxo de decisão</b></summary>
+
+  Perguntar ao usuário:
+  1. Se quer seguir para área de Front-End ou seguir para a área de Back-End.
+
+  2. Caso esteja na área de Front-End, se quer aprender React ou aprender Vue. Caso esteja na área de Back-End, poderá aprender C# ou aprender Java.
+
+  3. Depois, independente das escolhas anteriores, o usuário poderá escolher entre seguir se especializando na área escolhida ou seguir se desenvolvendo para se tornar Fullstack. Você deve exibir na tela uma mensagem específica para   cada escolha.
+
+  4. Por fim, pergunte quais são as tecnologias nas quais a pessoa gostaria de se especializar ou de conhecer. Aqui, a pessoa pode responder N tecnologias, uma de cada vez.
+
+
+  <h3>Extra:</h3>
+  Complementei o código para que, depois que o usuário adicionar uma nova linguagem na área Fullstack, ela seja salva no LocalStorage.
+
+  <h4>
+    <a href="https://djonibourscheid.github.io/7DaysOfCode/LogicWithJS/exercise03/">
+      <b>🥇 Resultado 🥇</b>
+    </a>
+  </h4>
+
+  <hr>
+  </hr>
+</details>
+
 - Projeto 4: Loops e randomização
 - Projeto 5: Arrays e coleções
 - Projeto 6: Remoção de Arrays
