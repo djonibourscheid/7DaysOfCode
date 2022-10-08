@@ -33,20 +33,12 @@ const numeroDez = 10
 const stringDez = '10'
 </pre>
 
-  Compare cada <i>numero</i> com sua devida <i>string</i> e retorne :
-  <ul>
-    <li>if (<i>numero</i> {== ou ===} <i>string</i>):
-      <ul>
-        <li>As variáveis <i>numero</i> e <i>string</i> tem o mesmo valor, mas tipos diferentes</li>
-        <li>As variáveis <i>numero</i> e <i>string</i> tem o mesmo valor e mesmo tipo</li>
-      </ul>
-    </li>
-    <li>else:
-      <ul>
-        <li>As variáveis <i>numero</i> e <i>string</i> não tem o mesmo valor</li>
-      </ul>
-    </li>
-  </ul>
+  Compare cada *numero* com sua devida *string* e retorne:
+  - if (*numero* {== ou ===} *string*):
+    - As variáveis *numero* e *string* tem o mesmo valor, mas tipos diferentes
+    - As variáveis *numero* e *string* tem o mesmo valor e mesmo tipo
+  - else:
+    - As variáveis *numero* e *string* não tem o mesmo valor
 
   <h4>
     <a href="https://djonibourscheid.github.io/7DaysOfCode/LogicWithJS/exercise01/">
