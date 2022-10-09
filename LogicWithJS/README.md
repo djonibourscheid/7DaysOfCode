@@ -106,7 +106,31 @@ const stringDez = '10'
   </hr>
 </details>
 
-- Projeto 4: Loops e randomização
+<!-- Projeto 4 -->
+<details>
+  <summary><b>Projeto 4: Loops e randomização</b></summary>
+
+  Você deve criar um programa que comece com um valor randômico entre 0 a 10 para o número que você vai adivinhar (7, por exemplo).
+  Em seguida, o programa vai perguntar para você qual o valor que você deseja chutar e, caso você acerte, ele irá te parabenizar. Caso erre, ele vai te dar mais 2 tentativas.
+  No fim, caso você não acerte nenhuma vez, ele vai imprimir qual era o número inicial.
+
+  <h3>Extra:</h3>
+  Complementei o código com:
+  - Usuário pode selecionar o número mínimo, máximo e o tanto de chances que ele quer. Caso nada informado, é definido 0, 10 e 3 por padrão.
+  - Validação para não ditar o mesmo número, número fora do intervalo definido...
+  - Representação visual dos números já falados.
+  - Responsividade
+
+  <h4>
+    <a href="https://djonibourscheid.github.io/7DaysOfCode/LogicWithJS/exercise04/">
+      <b>🥇 Resultado 🥇</b>
+    </a>
+  </h4>
+
+  <hr>
+  </hr>
+</details>
+
 - Projeto 5: Arrays e coleções
 - Projeto 6: Remoção de Arrays
 - Projeto 7: Funções em Javascript
