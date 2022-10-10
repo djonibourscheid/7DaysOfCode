@@ -131,8 +131,33 @@ const stringDez = '10'
   </hr>
 </details>
 
-- Projeto 5: Arrays e coleções
-- Projeto 6: Remoção de Arrays
+<!-- Projeto 5 e 6 -->
+<details>
+  <summary><b>Projeto 5 e 6: Fluxo de decisão e Remoção de elementos de array</b></summary>
+
+  **Dia 5:**
+  Faça uma lista de compras, para isto:
+    - O programa deve perguntar qual comida você deseja inserir, e você digitará o nome dela, como por exemplo batata.
+    - Depois, ele deverá perguntar em qual categoria essa comida se encaixa, com algumas opções já pré-definidas, como frutas, laticínios, congelados, doces... Assim, você poderá separar tudo no seu devido grupo.
+
+  **Dia 6:**
+  Opção de deletar a comida na lista
+  
+  <h3>Extra:</h3>
+  - Complementei o código para que, depois que o usuário adicionar, ela seja salva no LocalStorage
+  - Deletar comida do LocalStorage também
+  - Responsividade
+
+  <h4>
+    <a href="https://djonibourscheid.github.io/7DaysOfCode/LogicWithJS/exercise05/">
+      <b>🥇 Resultado 🥇</b>
+    </a>
+  </h4>
+
+  <hr>
+  </hr>
+</details>
+
 - Projeto 7: Funções em Javascript
 
 ## ⚔ Desafios Extras
