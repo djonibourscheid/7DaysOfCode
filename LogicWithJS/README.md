@@ -130,7 +130,6 @@ const stringDez = '10'
 <!-- Projeto 5 e 6 -->
 <details>
   <summary><b>Projeto 5 e 6: Fluxo de decisão e Remoção de elementos de array</b></summary>
-	<br>
 
   **Dia 5:**
 	Faça uma lista de compras, para isto:
