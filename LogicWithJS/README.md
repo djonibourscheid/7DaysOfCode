@@ -62,7 +62,7 @@ const stringDez = '10'
 
   <b>"Olá <i>[nome]</i>, você tem <i>[idade]</i> anos e já está aprendendo <i>[linguagem]</i>!"</b>
 
-  <h3>Desafio extra:</h3>
+  ### Desafio extra:
   Complemente o código para que, depois de exibir a mensagem anterior, o programa pergunte:
   <p>&nbsp;&nbsp;<b>"Você gosta de estudar <i>[linguagem]</i>?"</b></p>
 
@@ -85,16 +85,12 @@ const stringDez = '10'
 
   Perguntar ao usuário:
   1. Se quer seguir para área de Front-End ou seguir para a área de Back-End.
-
   2. Caso esteja na área de Front-End, se quer aprender React ou aprender Vue. Caso esteja na área de Back-End, poderá aprender C# ou aprender Java.
-
   3. Depois, independente das escolhas anteriores, o usuário poderá escolher entre seguir se especializando na área escolhida ou seguir se desenvolvendo para se tornar Fullstack. Você deve exibir na tela uma mensagem específica para   cada escolha.
-
   4. Por fim, pergunte quais são as tecnologias nas quais a pessoa gostaria de se especializar ou de conhecer. Aqui, a pessoa pode responder N tecnologias, uma de cada vez.
 
-
-  <h3>Extra:</h3>
-  Complementei o código para que, depois que o usuário adicionar uma nova linguagem na área Fullstack, ela seja salva no LocalStorage.
+  ### Extra:
+  - Complementei o código para que, depois que o usuário adicionar uma nova linguagem na área Fullstack, ela seja salva no LocalStorage.
 
   <h4>
     <a href="https://djonibourscheid.github.io/7DaysOfCode/LogicWithJS/exercise03/">
@@ -114,7 +110,7 @@ const stringDez = '10'
   Em seguida, o programa vai perguntar para você qual o valor que você deseja chutar e, caso você acerte, ele irá te parabenizar. Caso erre, ele vai te dar mais 2 tentativas.
   No fim, caso você não acerte nenhuma vez, ele vai imprimir qual era o número inicial.
 
-  <h3>Extra:</h3>
+  ### Extra:
   Complementei o código com:
   - Usuário pode selecionar o número mínimo, máximo e o tanto de chances que ele quer. Caso nada informado, é definido 0, 10 e 3 por padrão.
   - Validação para não ditar o mesmo número, número fora do intervalo definido...
@@ -134,16 +130,17 @@ const stringDez = '10'
 <!-- Projeto 5 e 6 -->
 <details>
   <summary><b>Projeto 5 e 6: Fluxo de decisão e Remoção de elementos de array</b></summary>
+	<br>
 
   **Dia 5:**
-  Faça uma lista de compras, para isto:
-    - O programa deve perguntar qual comida você deseja inserir, e você digitará o nome dela, como por exemplo batata.
-    - Depois, ele deverá perguntar em qual categoria essa comida se encaixa, com algumas opções já pré-definidas, como frutas, laticínios, congelados, doces... Assim, você poderá separar tudo no seu devido grupo.
+	Faça uma lista de compras, para isto:
+  1. O programa deve perguntar qual comida você deseja inserir, e você digitará o nome dela, como por exemplo batata.
+  2. Depois, ele deverá perguntar em qual categoria essa comida se encaixa, com algumas opções já pré-definidas, como frutas, laticínios, congelados, doces... Assim, você poderá separar tudo no seu devido grupo.
 
   **Dia 6:**
   Opção de deletar a comida na lista
   
-  <h3>Extra:</h3>
+  ### Extra:
   - Complementei o código para que, depois que o usuário adicionar, ela seja salva no LocalStorage
   - Deletar comida do LocalStorage também
   - Responsividade
@@ -158,7 +155,25 @@ const stringDez = '10'
   </hr>
 </details>
 
-- Projeto 7: Funções em Javascript
+<!-- Projeto 7 -->
+<details>
+  <summary><b>Projeto 7: Funções em Javascript</b></summary>
+
+  Você deverá criar uma calculadora sendo que, cada operação *(+ - x /)* terá sua própria função, e dentro dela seja calculado e retorne o valor final.
+  
+  ### Extra:
+  - Interface amigável para o usuário
+  - Responsividade
+
+  <h4>
+    <a href="https://djonibourscheid.github.io/7DaysOfCode/LogicWithJS/exercise07/">
+      <b>🥇 Resultado 🥇</b>
+    </a>
+  </h4>
+
+  <hr>
+  </hr>
+</details>
 
 ## ⚔ Desafios Extras
 - [x] Completar todos os projetos
