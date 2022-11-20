@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS DOM e CRUD</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="flex-column-center">
+  <h1>Cadastro de pessoas</h1>
+
+  <form class="form js-form flex-column-center">
+    <label for="name">Nome</label>
+    <input class="form-field js-field" id="name" maxlength="120" name="name" required type="text">
+
+    <label for="birth-date">Data de Nascimento</label>
+    <input class="form-field js-field" id="birth-date" name="birth-date" required type="date">
+
+    <button type="submit">Salvar</button>
+  </form>
+
+  <p class="result">Preencha os campos</p>
+
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body,
+button,
+input {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 1.6rem;
+}
+
+body {
+  color: #f5f5f5;
+  background-color: rgb(108, 116, 230);
+
+  height: 100vh;
+  gap: 5rem;
+}
+
+.form {
+  gap: 1rem;
+  max-width: 28rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+button,
+input {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  border: none;
+}
+
+.result {
+  background-color: rgb(118 144 233);
+  border-radius: 0.25rem;
+  line-height: 140%;
+  padding: 1rem;
+}
